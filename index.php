@@ -15,6 +15,47 @@
         ?>
     </header>
     
+
+    <div class="grey light-4">
+<br> <!-- C'est juste pour que sa change la couleur tant qu'on a pas include la bonne page-->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    </div>
+
+
+
+
     <!-- FOOTER -->
     <footer>
         <?php
