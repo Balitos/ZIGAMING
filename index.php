@@ -9,60 +9,13 @@
 
 <body>
     <!-- HEADER -->
-    <header>
-        <?php
-        include "components/php/includes/header.php";
-        ?>
-    </header>
-    
-
-    <div class="grey light-4">
-<br> <!-- C'est juste pour que sa change la couleur tant qu'on a pas include la bonne page-->
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-    </div>
-
-
-
-
+    <?php
+    include "components/php/includes/header.php";
+    ?>
+    <!-- WRAPPER -->
     <!-- FOOTER -->
-    <footer>
-        <?php
-        include "components/php/includes/footer.php";
-        ?>
-    </footer>
-    <script></script>
+    <?php
+    include "components/php/includes/footer.php";
+    ?>
 </body>
-
 </html>

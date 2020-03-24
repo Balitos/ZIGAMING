@@ -1,7 +1,60 @@
 /* HEADER */
-
 header{
+    height: 5.5rem;
+    background: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    width: 100%;
+}
 
+header > .container {
+    height: 100%;
+}
+
+#header-wrap{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+#header-logo{
+    cursor: pointer;
+}
+
+#header-logo h1{
+    margin: 0;
+}
+
+#header-logo span{
+    color: rgb(165, 0, 0);
+    font-weight: 300;
+}
+
+#header-co-contour{
+    background: #2e2e2e;
+    padding: 10px 15px;
+    border-radius: 2rem;
+    display: flex;
+    cursor: pointer;
+    transition: .25s;
+    transition-timing-function: ease-out;
+    -webkit-transition-timing-function: ease-out;
+}
+
+#header-co-contour:hover{
+    color: rgb(165, 0, 0);
+    transition: .25s;
+    -webkit-transition: .25s;
+    
+}
+
+#header-co-contour p{
+    margin: 0 0 0 1rem;
+    font-size: 1.1rem;
 }
 
 
