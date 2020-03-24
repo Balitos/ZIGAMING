@@ -2,11 +2,13 @@
 header{
     height: 5.5rem;
     background: #333;
-    position: fixed;
+    /* position: fixed;
     top: 0;
     left: 0;
-    z-index: 1001;
+    z-index: 1001; */
     width: 100%;
+    position: fixed;
+    z-index: 9999999;
 }
 
 header > .container {
