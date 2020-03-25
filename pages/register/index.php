@@ -33,7 +33,7 @@ if(isset($_POST['register_submit']))
                         {
                             $insertmbr = $bdd->prepare("INSERT INTO membres(pseudo, mail, mot_de_passe) VALUES(?, ?, ?)");
                             $insertmbr->execute(array($pseudo, $mail, $mdp));
-                            header('Location: ../../index.php');
+                            header('Location: ../../');
                         }
                         else
                         {
@@ -61,7 +61,6 @@ if(isset($_POST['register_submit']))
         $erreur = "Tous les champs doivent être complétés !";
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -79,7 +78,7 @@ if(isset($_POST['register_submit']))
         <!-- FORMULAIRE -->
         <div id="formulaire">
             <form method="POST" action="">
-                <h1>Become family member</h1>
+                <h1>Devient un membre de la famille</h1>
                 <div class="register-form-inputs">
                     <div class="register-input-box">
                         <i class="fas fa-user"></i>
@@ -109,8 +108,8 @@ if(isset($_POST['register_submit']))
                         }
                     ?>
                 </div>
-                <button class="form-submit" type="submit" name="register_submit">Register</button>
-                <p class="register-login">or <a href="../login/" title="Login">Login</a></p>
+                <button class="form-submit" type="submit" name="register_submit">Créer</button>
+                <p class="register-login">ou <a href="../login/" title="Login">Se connecter</a></p>
             </form>
         </div>
     </div>

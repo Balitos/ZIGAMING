@@ -8,7 +8,9 @@
             <div id="header-connection">
                 <div id="header-co-contour">
                     <i class="far fa-user-circle"></i>
-                    <p>Se connecter</p>
+                    <a id="hcc-link" href="../../pages/login/">
+                        <p>Se connecter</p>
+                    </a>
                 </div>
             </div>
         </div>

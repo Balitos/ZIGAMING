@@ -47,7 +47,11 @@ header > .container {
     color: rgb(165, 0, 0);
     transition: .25s;
     -webkit-transition: .25s;
-    
+}
+
+#hcc-link{
+    text-decoration: none;
+    color: inherit;
 }
 
 #header-co-contour p{
