@@ -3,14 +3,14 @@
 
 <head>
     <?php
-    include "components/php/includes/head.php";
+    include "partials/php/head.php";
     ?>
 </head>
 
 <body>
     <!-- HEADER -->
     <?php
-    include "components/php/includes/header.php";
+    include "partials/php/header.php";
     ?>
     <!-- WRAPPER -->
     <div id="wrapper">
@@ -18,7 +18,7 @@
     </div>
     <!-- FOOTER -->
     <?php
-    include "components/php/includes/footer.php";
+    include "partials/php/footer.php";
     ?>
 </body>
 </html>

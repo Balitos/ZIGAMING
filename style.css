@@ -1,6 +1,6 @@
-@import url("components/css/base.css");
-@import url("components/css/header.css");
-@import url("components/css/footer.css");
+@import url("partials/css/base.css");
+@import url("partials/css/header.css");
+@import url("partials/css/footer.css");
 
 
 /* WRAPPER */
