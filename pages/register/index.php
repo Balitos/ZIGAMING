@@ -33,7 +33,7 @@ if(isset($_POST['register_submit']))
                         {
                             $insertmbr = $bdd->prepare("INSERT INTO membres(pseudo, mail, mot_de_passe) VALUES(?, ?, ?)");
                             $insertmbr->execute(array($pseudo, $mail, $mdp));
-                            header('Location: ../../');
+                            header('Location: ../login/');
                         }
                         else
                         {
