@@ -7,15 +7,14 @@ try {
 }
 
 
-
 if (isset($_POST['annonce_submit'])) {
 
   if (!empty($_POST['titre']) and !empty($_POST['description']) and !empty($_POST['console']) and !empty($_POST['etat']) and !empty($_POST['prix'])) {
-    $titreJeu = $_POST["titre"];
-    $descriptionJeu = addslashes($_POST["description"]);
+    $titreJeu = htmlspecialchars($_POST["titre"]);
+    $descriptionJeu = htmlspecialchars(addslashes($_POST["description"])); 
     $console = $_POST["console"];
     $etatJeu = $_POST["etat"];
-    $prix = $_POST["prix"];
+    $prix = htmlspecialchars($_POST["prix"]);
     $idVendeur = $_SESSION['id'];
 
 
@@ -24,19 +23,12 @@ if (isset($_POST['annonce_submit'])) {
     $req->execute(['titre' => $titreJeu, 'descriptionJeu' => $descriptionJeu, 'etat' => $etatJeu, 'console' => $console, 'prix' => $prix, 'id' => $idVendeur]);
     $req->closeCursor();
 
-    header("Location: ../../index.php");
+    header("Location: ../profil/index.php?id=".$_SESSION['id']);
   } else {
     $erreur = "Tous les champs doivent être complétés !";
   }
 }
 ?>
-
-
-
-
-
-
-
 
 
 <!DOCTYPE html>
