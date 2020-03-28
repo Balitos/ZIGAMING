@@ -9,9 +9,9 @@ if(isset($_POST['register_submit']))
 {
     $pseudo = htmlspecialchars($_POST['pseudo']);
     $mail = htmlspecialchars($_POST['mail']);
-    $mdp = sha1($_POST['mdp']);
-    $mdp2 = sha1($_POST['mdp2']);
-
+    $mdp = $_POST['mdp'];
+    $mdp2 = $_POST['mdp2'];
+    $hashedpass = password_hash($mdp, PASSWORD_DEFAULT);
     $pseudolength = strlen($pseudo);
     if(!empty($_POST['pseudo']) AND !empty($_POST['mail']) AND !empty($_POST['mdp']) AND !empty($_POST['mdp2']))
     {
@@ -32,7 +32,7 @@ if(isset($_POST['register_submit']))
                         if($mdp == $mdp2)
                         {
                             $insertmbr = $bdd->prepare("INSERT INTO membres(pseudo, mail, mot_de_passe) VALUES(?, ?, ?)");
-                            $insertmbr->execute(array($pseudo, $mail, $mdp));
+                            $insertmbr->execute(array($pseudo, $mail, $hashedpass));
                             header('Location: ../login/');
                         }
                         else

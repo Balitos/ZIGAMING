@@ -62,7 +62,6 @@ if(isset($_SESSION['id']))
 
     if(isset($_POST['descriptionProfil']) AND !empty($_POST['descriptionProfil']))
     {
-        // $descriptionJeu = htmlspecialchars(addslashes($_POST["description"])); 
         $descriptionProfil = htmlspecialchars(addslashes($_POST['descriptionProfil']));
         $descriptionProfilLength = strlen($descriptionProfil);
         if($descriptionProfilLength <= 255)

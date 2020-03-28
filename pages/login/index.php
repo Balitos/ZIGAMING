@@ -10,18 +10,18 @@ try {
 if(isset($_POST['connect_submit']))
 {
     $mailConnect = htmlspecialchars($_POST['mailConnect']);
-    $mdpConnect = sha1($_POST['mdpConnect']);
+    $mdpConnect = $_POST['mdpConnect'];
     if(!empty($mailConnect) AND !empty($mdpConnect))
     {
-        $requser = $bdd->prepare("SELECT * FROM membres WHERE mail = ? AND mot_de_passe = ?");
-        $requser->execute(array($mailConnect, $mdpConnect));
+        $requser = $bdd->prepare("SELECT * FROM membres WHERE mail = ?");
+        $requser->execute(array($mailConnect));
         $userexist = $requser->rowCount();
-        if($userexist == 1)
+        $result = $requser->fetch();
+        if($userexist == 1 && password_verify($_POST['mdpConnect'], $result['mot_de_passe']))
         {
-            $userinfo = $requser->fetch();
-            $_SESSION['id'] = $userinfo['id'];
-            $_SESSION['pseudo'] = $userinfo['pseudo'];
-            $_SESSION['mail'] = $userinfo['mail'];
+            $_SESSION['id'] = $result['id'];
+            $_SESSION['pseudo'] = $result['pseudo'];
+            $_SESSION['mail'] = $result['mail'];
             header("Location: ../profil/index.php?id=".$_SESSION['id']);
         }
         else
