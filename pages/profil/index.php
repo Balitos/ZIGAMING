@@ -38,6 +38,8 @@ if(isset($_GET['id']) AND $_GET['id'] > 0)
             if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id'])
             {
             ?>
+            <a href="../annonce/annonce.php">Vendre un jeu</a>
+            <br>
             <a href="../editProfil/">Editer mon profil</a>
             <br/>
             <a href="deconnexion.php">Se déconnecter</a>
