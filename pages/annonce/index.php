@@ -17,7 +17,6 @@ if (isset($_POST['annonce_submit'])) {
     $prix = htmlspecialchars($_POST["prix"]);
     $idVendeur = $_SESSION['id'];
 
-
     $req = $bdd->prepare("INSERT INTO annonce SET titre= '$titreJeu', descriptionJeu= '$descriptionJeu', console= '$console' , etat= '$etatJeu', prix='$prix', id='$idVendeur'");
 
     $req->execute(['titre' => $titreJeu, 'descriptionJeu' => $descriptionJeu, 'etat' => $etatJeu, 'console' => $console, 'prix' => $prix, 'id' => $idVendeur]);

@@ -30,9 +30,21 @@ if(isset($_GET['id']) AND $_GET['id'] > 0)
         <!-- PROFIL -->
         <div id="profil">
             <h1>Profil de <?php echo $userinfo['pseudo']; ?></h1>
+            <br>
+            <?php
+            if(!empty($userinfo['avatar']))
+            {
+            ?>
+            <img src="../../assets/membres/avatars/<?php echo $userinfo['avatar']; ?>" alt="Avatar">
+            <?php
+            }
+            ?>
+            <br>
             Pseudo = <?php echo $userinfo['pseudo']; ?>
             <br/>
             Mail = <?php echo $userinfo['mail']; ?>
+            <br/>
+            Description profil = <?php echo $userinfo['descriptionProfil']; ?>
             <br/>
             <?php
             if(isset($_SESSION['id']) AND $userinfo['id'] == $_SESSION['id'])
