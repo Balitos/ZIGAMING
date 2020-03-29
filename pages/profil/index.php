@@ -52,6 +52,8 @@ if(isset($_GET['id']) AND $_GET['id'] > 0)
             ?>
             <a href="../annonce/">Vendre un jeu</a>
             <br>
+            <a href="../annonce/choixGestion.php">Gérer mes annonces</a>
+            <br>
             <a href="../editProfil/">Editer mon profil</a>
             <br/>
             <a href="deconnexion.php">Se déconnecter</a>
