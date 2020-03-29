@@ -6,12 +6,12 @@
                 <h1>ZI<span>GAMING</span></h1>
             </div>
             <div id="header-connection">
-                <a id="hcc-link" href="../../pages/annonce/">
+                <a class="header-link" href="../../pages/annonce/">
                     <button type="submit" class="header-co-contour" name="annonce-btn">
                         <i class="fas fa-plus"></i>
                     </button>
                 </a>
-                <a id="hcc-link" href="javascript:history.back()">
+                <a class="header-link" href="javascript:history.back()">
                     <button type="submit" class="header-co-contour" name="login-btn">
                         <i class="far fa-user-circle"></i>
                     </button>

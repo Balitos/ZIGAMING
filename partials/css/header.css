@@ -21,7 +21,7 @@ header > .container {
 }
 
 #header-logo{
-    cursor: pointer;
+    cursor: default;
 }
 
 #header-logo h1{
@@ -63,7 +63,7 @@ header > .container {
     font-size: 1.1rem;
 }
 
-#hcc-link{
+.header-link{
     text-decoration: none;
     color: inherit;
 }
