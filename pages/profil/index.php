@@ -55,6 +55,15 @@ if(isset($_GET['id']) AND $_GET['id'] > 0)
             <a href="../editProfil/">Editer mon profil</a>
             <br/>
             <a href="deconnexion.php">Se déconnecter</a>
+            <br>
+            <a href="../accueilCo/">Retour à l'Accueil</a>
+            <?php
+            }
+            else
+            {
+            ?>
+            <br>
+            <a href="../../">Retour à l'Accueil</a>
             <?php
             }
             ?>

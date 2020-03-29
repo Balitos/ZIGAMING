@@ -58,11 +58,6 @@ header > .container {
     -webkit-transition: .25s;
 }
 
-.header-co-contour p{
-    margin: 0 0 0 1rem;
-    font-size: 1.1rem;
-}
-
 #hcc-link{
     text-decoration: none;
     color: inherit;
