@@ -6,52 +6,53 @@ try {
   die('Erreur : ' . $e->getMessage());
 }
 
-if (isset($_POST['annonce_submit'])) {
 
-  if (!empty($_POST['titre']) and !empty($_POST['descriptionJeu']) and !empty($_POST['console']) and !empty($_POST['etat']) and !empty($_POST['prix'])) {
-    $titreJeu = htmlspecialchars($_POST["titre"]);
-    $descriptionJeu = htmlspecialchars(addslashes($_POST["descriptionJeu"]));
-    $console = $_POST["console"];
-    $etatJeu = $_POST["etat"];
-    $prix = htmlspecialchars($_POST["prix"]);
-    $idVendeur = $_SESSION['id'];
-    
+  if (isset($_POST['annonce_submit'])) {
 
-    if (isset($_FILES['photoJeu']) and !empty($_FILES['photoJeu']['name'])) {
-      $tailleMax = 2097152;
-      $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
-      if ($_FILES['photoJeu']['size'] <= $tailleMax) {
-        $extensionUpload = strtolower(substr(strrchr($_FILES['photoJeu']['name'], '.'), 1));
-        if (in_array($extensionUpload, $extensionsValides)) {
-          $chemin = "../../assets/membres/annonce/" . $_FILES['photoJeu']['name'];
-          $resultat = move_uploaded_file($_FILES['photoJeu']['tmp_name'], $chemin);
-          if ($resultat) {
+    if (!empty($_POST['titre']) and !empty($_POST['descriptionJeu']) and !empty($_POST['console']) and !empty($_POST['etat']) and !empty($_POST['prix'])) {
+      $titreJeu = htmlspecialchars($_POST["titre"]);
+      $descriptionJeu = htmlspecialchars(addslashes($_POST["descriptionJeu"]));
+      $console = $_POST["console"];
+      $etatJeu = $_POST["etat"];
+      $prix = htmlspecialchars($_POST["prix"]);
+      $idVendeur = $_SESSION['id'];
+      
 
-            $req = $bdd->prepare("INSERT INTO annonce SET photo = :photoJeu, titre = :titre, descriptionJeu = :descriptionJeu, console= :console,
-                           etat= :etat, prix= :prix, id= :id");
+      if (isset($_FILES['photoJeu']) and !empty($_FILES['photoJeu']['name'])) {
+        $tailleMax = 2097152;
+        $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
+        if ($_FILES['photoJeu']['size'] <= $tailleMax) {
+          $extensionUpload = strtolower(substr(strrchr($_FILES['photoJeu']['name'], '.'), 1));
+          if (in_array($extensionUpload, $extensionsValides)) {
+            $chemin = "../../assets/membres/annonce/" . $_FILES['photoJeu']['name'];
+            $resultat = move_uploaded_file($_FILES['photoJeu']['tmp_name'], $chemin);
+            if ($resultat) {
 
-            $req->execute([
-              'photoJeu' => $_FILES['photoJeu']['name'], 'titre' => htmlspecialchars($_POST["titre"]),
-              'descriptionJeu' => htmlspecialchars(addslashes($_POST["descriptionJeu"])), 'console' => $_POST["console"],
-              'etat' => $_POST["etat"], 'prix' => htmlspecialchars($_POST["prix"]), 'id' => $_SESSION['id']
-            ]);
-            $req->closeCursor();
+              $req = $bdd->prepare("INSERT INTO annonce SET photo = :photoJeu, titre = :titre, descriptionJeu = :descriptionJeu, console= :console,
+                            etat= :etat, prix= :prix, id= :id");
 
-            header('Location: ../profil/index.php?id=' . $_SESSION['id']);
+              $req->execute([
+                'photoJeu' => $_FILES['photoJeu']['name'], 'titre' => htmlspecialchars($_POST["titre"]),
+                'descriptionJeu' => htmlspecialchars(addslashes($_POST["descriptionJeu"])), 'console' => $_POST["console"],
+                'etat' => $_POST["etat"], 'prix' => htmlspecialchars($_POST["prix"]), 'id' => $_SESSION['id']
+              ]);
+              $req->closeCursor();
+
+              header('Location: ../profil/index.php?id=' . $_SESSION['id']);
+            } else {
+              $msg = "Erreur durant l'importation de votre photo";
+            }
           } else {
-            $msg = "Erreur durant l'importation de votre photo";
+            $msg = "Votre photo doit être au format jpg, jpeg, gif ou png";
           }
         } else {
-          $msg = "Votre photo doit être au format jpg, jpeg, gif ou png";
+          $msg = "Votre photo ne doit pas dépasser 2Mo";
         }
-      } else {
-        $msg = "Votre photo ne doit pas dépasser 2Mo";
       }
+    } else {
+      $erreur = "Tous les champs doivent être complétés !";
     }
-  } else {
-    $erreur = "Tous les champs doivent être complétés !";
   }
-}
 
 ?>
 
@@ -74,6 +75,10 @@ if (isset($_POST['annonce_submit'])) {
 
 <body>
 
+<?php 
+if(isset($_SESSION['id']))
+{
+?>
   <div class="grix xs1 txt-center grey light-3">
     <div>
       <h3>Vends ton article</h3>
@@ -181,7 +186,10 @@ if (isset($_POST['annonce_submit'])) {
       <input type="submit" name="annonce_submit" value="Envoyez vos jeux">
     </form>
   </div>
-
+<?php } else {
+    header('Location: ../login/');
+}
+?>
   <div class="txt-center" id="gestion-erreurs">
     <?php
     if (isset($erreur)) {
