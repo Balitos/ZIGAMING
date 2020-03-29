@@ -6,27 +6,53 @@ try {
   die('Erreur : ' . $e->getMessage());
 }
 
-
 if (isset($_POST['annonce_submit'])) {
 
-  if (!empty($_POST['titre']) and !empty($_POST['description']) and !empty($_POST['console']) and !empty($_POST['etat']) and !empty($_POST['prix'])) {
+  if (!empty($_POST['titre']) and !empty($_POST['descriptionJeu']) and !empty($_POST['console']) and !empty($_POST['etat']) and !empty($_POST['prix'])) {
     $titreJeu = htmlspecialchars($_POST["titre"]);
-    $descriptionJeu = htmlspecialchars(addslashes($_POST["description"])); 
+    $descriptionJeu = htmlspecialchars(addslashes($_POST["descriptionJeu"]));
     $console = $_POST["console"];
     $etatJeu = $_POST["etat"];
     $prix = htmlspecialchars($_POST["prix"]);
     $idVendeur = $_SESSION['id'];
+    
 
-    $req = $bdd->prepare("INSERT INTO annonce SET titre= '$titreJeu', descriptionJeu= '$descriptionJeu', console= '$console' , etat= '$etatJeu', prix='$prix', id='$idVendeur'");
+    if (isset($_FILES['photoJeu']) and !empty($_FILES['photoJeu']['name'])) {
+      $tailleMax = 2097152;
+      $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
+      if ($_FILES['photoJeu']['size'] <= $tailleMax) {
+        $extensionUpload = strtolower(substr(strrchr($_FILES['photoJeu']['name'], '.'), 1));
+        if (in_array($extensionUpload, $extensionsValides)) {
+          $chemin = "../../assets/membres/annonce/" . $_FILES['photoJeu']['name'];
+          $resultat = move_uploaded_file($_FILES['photoJeu']['tmp_name'], $chemin);
+          if ($resultat) {
 
-    $req->execute(['titre' => $titreJeu, 'descriptionJeu' => $descriptionJeu, 'etat' => $etatJeu, 'console' => $console, 'prix' => $prix, 'id' => $idVendeur]);
-    $req->closeCursor();
+            $req = $bdd->prepare("INSERT INTO annonce SET photo = :photoJeu, titre = :titre, descriptionJeu = :descriptionJeu, console= :console,
+                           etat= :etat, prix= :prix, id= :id");
 
-    header("Location: ../profil/index.php?id=".$_SESSION['id']);
+            $req->execute([
+              'photoJeu' => $_FILES['photoJeu']['name'], 'titre' => htmlspecialchars($_POST["titre"]),
+              'descriptionJeu' => htmlspecialchars(addslashes($_POST["descriptionJeu"])), 'console' => $_POST["console"],
+              'etat' => $_POST["etat"], 'prix' => htmlspecialchars($_POST["prix"]), 'id' => $_SESSION['id']
+            ]);
+            $req->closeCursor();
+
+            header('Location: ../profil/index.php?id=' . $_SESSION['id']);
+          } else {
+            $msg = "Erreur durant l'importation de votre photo";
+          }
+        } else {
+          $msg = "Votre photo doit être au format jpg, jpeg, gif ou png";
+        }
+      } else {
+        $msg = "Votre photo ne doit pas dépasser 2Mo";
+      }
+    }
   } else {
     $erreur = "Tous les champs doivent être complétés !";
   }
 }
+
 ?>
 
 
@@ -52,17 +78,18 @@ if (isset($_POST['annonce_submit'])) {
     <div>
       <h3>Vends ton article</h3>
     </div>
-    <form name="formulaire_annonce" method="POST" onsubmit="return verif_champ(prix)">
+    <form name="formulaire_annonce" method="POST" onsubmit="return verif_champ(prix)" enctype="multipart/form-data">
       <div class="gutter-xs4 sm-4 xl-4 md-4 container">
         <div class="card rounded-3 white">
           <div class="card-content">
+          <div class="grix xs2">
             <div>
-              <br>
-              <label for="titre">Ajouter une photo</label>
+              <label>Choisissez  une Photo </label>
             </div>
-            <div class="form-field">
-              AJOUTER UNE PHTOTOTOOTOTOTO
+            <div class="form-field"> 
+              <input type="file" name="photoJeu"><br><br>
             </div>
+          </div>
           </div>
         </div>
       </div>
@@ -89,7 +116,7 @@ if (isset($_POST['annonce_submit'])) {
                 <label for="description">Description</label>
               </div>
               <div class="form-field">
-                <textarea id="description" name="description" class="form-control" placeholder="Ex : Acheter en précommande je n'ai pas aimé.."></textarea>
+                <textarea id="description" name="descriptionJeu" class="form-control" placeholder="Ex : Acheter en précommande je n'ai pas aimé.."></textarea>
               </div>
             </div>
           </div>
@@ -152,9 +179,10 @@ if (isset($_POST['annonce_submit'])) {
         </div>
       </div>
       <input type="submit" name="annonce_submit" value="Envoyez vos jeux">
+    </form>
   </div>
 
-  <div class="txt-center"id="gestion-erreurs">
+  <div class="txt-center" id="gestion-erreurs">
     <?php
     if (isset($erreur)) {
       echo $erreur;
@@ -162,7 +190,7 @@ if (isset($_POST['annonce_submit'])) {
   </div>
   <!-- JAVASCRIPT -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-  
+
   <!-- FONT AWESOME KIT -->
   <script src="https://kit.fontawesome.com/e6c2645393.js" crossorigin="anonymous"></script>
 </body>
