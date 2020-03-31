@@ -47,21 +47,51 @@ require_once '../../includes/functions.php';
 
       while ($variable = $reponse->fetch()) {
 
+        $jeuToDell = $variable['numeroAnnonce'];
+
+      ?>
+        <div class="card airforce light-1">
+          <div class="card-image">
+            <img src="../../assets/membres/annonce/<?php echo $variable['photo'] ?> " alt="photoJeu" />
+          </div>
+          <div class="card-header"> <?php echo $variable['titre']  ?> </div>
+          <div class="divider"></div>
+          <div class="card-content">
+            <?php echo stripslashes($variable['descriptionJeu']); ?>
+          </div>
+          <div class="divider"></div>
+          <div class="card-footer"> <?php echo $variable['prix']  ?> €</div>
+          <div class="grix xs2">
+            <div>
+              <a href="../annonce/gestion.php?annonce=<?php echo $variable['numeroAnnonce'] ?>" class="btn outline txt-black txt-center"><span class="outline-text txt-center">Choisir</span></a>
+            </div>
+            <div>
+              <form method="post">
+                <input type="submit" name="supprimer_jeu<?php echo $variable['numeroAnnonce'] ?>" value="Supprimer" class="btn outline txt-black txt-center">
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+      <?php
 
 
-        echo    '<div class="card airforce light-1">';
-        echo    '<div class="card-image">';
-        echo    '<img src="../../assets/membres/annonce/' . $variable['photo'] . ' " alt="photoJeu" />';
-        echo    '</div>';
-        echo    '<div class="card-header">' . $variable['titre'] . '</div>';
-        echo    '<div class="divider"></div>';
-        echo    '<div class="card-content">';
-        echo            stripslashes($variable['descriptionJeu']);
-        echo    '</div>';
-        echo    '<div class="divider"></div>';
-        echo            '<div class="card-footer">' . $variable['prix'] . '€</div>';
-        echo            '<a href="../annonce/gestion.php?annonce='.$variable['numeroAnnonce'].' " class="btn outline txt-black txt-center"><span class="outline-text txt-center">Choisir</span></a>';
-        echo    '</div>';
+        if (isset($_POST['supprimer_jeu' . $variable['numeroAnnonce']])) {
+
+          try {
+            $bdd = new PDO('mysql:host=localhost;dbname=zigaming;charset=utf8', 'root', '');
+          } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+          }
+
+          $req = $bdd->prepare("DELETE FROM annonce WHERE numeroAnnonce= '$jeuToDell'");
+
+
+          $req->execute(['numeroAnnonce' =>  $jeuToDell]);
+          $req->closeCursor();
+          header('Location: choixGestion.php');
+        }
       }
       $variable .= "<br>";
 
@@ -75,7 +105,16 @@ require_once '../../includes/functions.php';
   <?php } else {
     header('Location: ../login/');
   }
+
+
+
+
   ?>
+
+
+
+
+
 
   </div>
   <!-- JAVASCRIPT -->

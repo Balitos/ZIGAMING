@@ -14,7 +14,6 @@ try {
 
   $numeroAnnonce = $annonceinfo['numeroAnnonce'];
   $numeroAnnonce++;
-  echo $numeroAnnonce;
 
 
 try {
