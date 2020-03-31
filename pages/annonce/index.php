@@ -7,6 +7,24 @@ try {
 }
 
 
+  $id = $_SESSION['id'];
+  $reqannonce = $bdd->prepare("SELECT  numeroAnnonce FROM annonce WHERE id = '$id' ORDER BY numeroAnnonce DESC LIMIT 0,1");
+  $reqannonce->execute(array());
+  $annonceinfo = $reqannonce->fetch();
+
+  $numeroAnnonce = $annonceinfo['numeroAnnonce'];
+  $numeroAnnonce++;
+  echo $numeroAnnonce;
+
+
+try {
+  $bdd = new PDO('mysql:host=127.0.0.1;dbname=zigaming;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+} catch (Exception $e) {
+  die('Erreur : ' . $e->getMessage());
+}
+
+
+
   if (isset($_POST['annonce_submit'])) {
 
     if (!empty($_POST['titre']) and !empty($_POST['descriptionJeu']) and !empty($_POST['console']) and !empty($_POST['etat']) and !empty($_POST['prix'])) {
@@ -24,7 +42,7 @@ try {
         if ($_FILES['photoJeu']['size'] <= $tailleMax) {
           $extensionUpload = strtolower(substr(strrchr($_FILES['photoJeu']['name'], '.'), 1));
           if (in_array($extensionUpload, $extensionsValides)) {
-            $chemin = "../../assets/membres/annonce/" . $_FILES['photoJeu']['name'];
+            $chemin = "../../assets/membres/annonce/" . $numeroAnnonce.".".$extensionUpload;
             $resultat = move_uploaded_file($_FILES['photoJeu']['tmp_name'], $chemin);
             if ($resultat) {
 
@@ -32,7 +50,7 @@ try {
                             etat= :etat, prix= :prix, id= :id");
 
               $req->execute([
-                'photoJeu' => $_FILES['photoJeu']['name'], 'titre' => htmlspecialchars($_POST["titre"]),
+                'photoJeu' => $numeroAnnonce.".".$extensionUpload, 'titre' => htmlspecialchars($_POST["titre"]),
                 'descriptionJeu' => htmlspecialchars(addslashes($_POST["descriptionJeu"])), 'console' => $_POST["console"],
                 'etat' => $_POST["etat"], 'prix' => htmlspecialchars($_POST["prix"]), 'id' => $_SESSION['id']
               ]);
