@@ -10,6 +10,10 @@ footer{
     background: #ea732b;
 }
 
+footer a{
+    color: #f7f7f7;
+}
+
 #footer-text p{
     margin: 20px 0;
     color: #f7f7f7;

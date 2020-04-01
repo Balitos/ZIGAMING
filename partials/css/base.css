@@ -6,12 +6,17 @@ body{
     margin: 0;
     font-family: "Roboto",sans-serif;
     font-size: 1.2rem;
+    background-color: #262626;
 }
+
+
+/* CONTAINER */
 
 .container{
     width: 1140px;
     margin: 0 auto;
 }
+
 
 
 /* MEDIA QUERIES */
