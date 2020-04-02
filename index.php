@@ -1,6 +1,15 @@
 <?php
 session_start();
+
+try {
+    $bdd = new PDO('mysql:host=localhost;dbname=zigaming;charset=utf8', 'root', '');
+} catch (Exception $e) {
+    die('Erreur : ' . $e->getMessage());
+}
+
+$reponse = $bdd->query("SELECT numeroAnnonce, console, titre, prix, photo, descriptionJeu FROM annonce");
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -47,140 +56,25 @@ session_start();
             </div>
             <!-- CASES -->
             <div id="case-container">
-                <div class="case" id="border-left">
+                <?php
+                $variable = "";
+                while ($variable = $reponse->fetch())
+                {
+                ?>
+                <div class="case">
                     <div class="case-img">
                         
                     </div>
                     <div class="case-infos">
-
+                    <?php echo $variable['titre'] ?>
                     </div>
                     <div class="case-price">
-
+                    <?php echo $variable['prix'] ?>
                     </div>
                 </div>
-                <div class="case">
-                    <div class="case-img">
-                            
-                    </div>
-                    <div class="case-infos">
-
-                    </div>
-                    <div class="case-price">
-
-                    </div>
-                </div>
-                <div class="case">
-                    <div class="case-img">
-                        
-                        </div>
-                        <div class="case-infos">
-    
-                        </div>
-                        <div class="case-price">
-    
-                        </div>
-                    </div>
-                <div class="case">
-                    <div class="case-img">
-                        
-                        </div>
-                        <div class="case-infos">
-    
-                        </div>
-                        <div class="case-price">
-    
-                        </div>
-                    </div>
-                <div class="case">
-                    <div class="case-img">
-                        
-                        </div>
-                        <div class="case-infos">
-    
-                        </div>
-                        <div class="case-price">
-    
-                        </div>
-                    </div>
-                <div class="case" id="border-right">
-                    <div class="case-img">
-                        
-                        </div>
-                        <div class="case-infos">
-    
-                        </div>
-                        <div class="case-price">
-    
-                        </div>
-                    </div>
-            </div>
-            <div id="case-container">
-                <div class="case" id="border-left">
-                    <div class="case-img">
-                        
-                    </div>
-                    <div class="case-infos">
-
-                    </div>
-                    <div class="case-price">
-
-                    </div>
-                </div>
-                <div class="case">
-                    <div class="case-img">
-                            
-                    </div>
-                    <div class="case-infos">
-
-                    </div>
-                    <div class="case-price">
-
-                    </div>
-                </div>
-                <div class="case">
-                    <div class="case-img">
-                        
-                        </div>
-                        <div class="case-infos">
-    
-                        </div>
-                        <div class="case-price">
-    
-                        </div>
-                    </div>
-                <div class="case">
-                    <div class="case-img">
-                        
-                        </div>
-                        <div class="case-infos">
-    
-                        </div>
-                        <div class="case-price">
-    
-                        </div>
-                    </div>
-                <div class="case">
-                    <div class="case-img">
-                        
-                        </div>
-                        <div class="case-infos">
-    
-                        </div>
-                        <div class="case-price">
-    
-                        </div>
-                    </div>
-                <div class="case" id="border-right">
-                    <div class="case-img">
-                        
-                        </div>
-                        <div class="case-infos">
-    
-                        </div>
-                        <div class="case-price">
-    
-                        </div>
-                    </div>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </div>
