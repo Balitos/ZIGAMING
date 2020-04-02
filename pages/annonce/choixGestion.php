@@ -39,7 +39,7 @@ require_once '../../includes/functions.php';
 
       $id = $_SESSION['id'];
 
-      $reponse = $bdd->query("SELECT numeroAnnonce, console, titre, prix, photo, descriptionJeu FROM annonce WHERE id = '$id' ");
+      $reponse = $bdd->query("SELECT numeroAnnonce, titre, prix, photo, descriptionJeu FROM annonce WHERE id = '$id' ");
 
       $variable = "";
       $variable .= "<br>";
@@ -60,9 +60,7 @@ require_once '../../includes/functions.php';
             <?php echo stripslashes($variable['descriptionJeu']); ?>
           </div>
           <div class="divider"></div>
-          <div class="card-footer">
-          <?php echo $variable['console']; ?>  <br>
-          <?php echo $variable['prix']  ?> €</div>
+          <div class="card-footer"> <?php echo $variable['prix']  ?> €</div>
           <div class="grix xs2">
             <div>
               <a href="../annonce/gestion.php?annonce=<?php echo $variable['numeroAnnonce'] ?>" class="btn outline txt-black txt-center"><span class="outline-text txt-center">Choisir</span></a>
