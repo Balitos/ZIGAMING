@@ -6,3 +6,43 @@
     color: red;
     font-size: 15px;
 }
+
+#descriptionTitre
+{
+    color: white;
+    margin-left: 2em;
+}
+
+#nomJeu {
+    color: white;
+    margin-left: 1em;
+
+}
+
+#titre {
+    margin-top: 2em;
+    
+}
+
+#description {
+    color:white;
+    margin-left: 1em ;
+    padding: 2%;
+    margin-bottom: 5em ;
+}
+
+#image {
+    margin-top: 2em;
+}
+
+/* carte */
+
+#card_vendeur {
+
+    height: 20em;
+    max-width: auto;
+    min-width: auto;
+    background: rgb(64, 64, 64);
+    margin-top: 2em;
+    border-radius: 1.6rem;
+}

@@ -142,7 +142,7 @@ if(isset($_SESSION['id']))
                 <label for="description">Description</label>
               </div>
               <div class="form-field">
-                <textarea id="description" name="descriptionJeu" class="form-control" placeholder="Ex : Acheter en précommande je n'ai pas aimé.."></textarea>
+                <textarea  name="descriptionJeu" class="form-control" placeholder="Ex : Acheter en précommande je n'ai pas aimé.."></textarea>
               </div>
             </div>
           </div>
