@@ -3,7 +3,9 @@
     <div class="contener">
         <div id="header-wrap">
             <div id="header-logo">
-                <h1>ZI<span>GAMING</span></h1>
+                <a href="../../../">
+                    <h1>ZI<span>GAMING</span></h1>
+                </a>
             </div>
             <div id="header-connection">
                 <a class="header-link" href="../../pages/login/">

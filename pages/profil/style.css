@@ -5,11 +5,68 @@
 /* PROFIL */
 
 #profil{
+    color: white;
+    margin-bottom: 4em;
+}
+
+.profil-icons{
+    text-align: right;
+    margin-bottom: 2em;
+}
+
+.profil-icons i{
+    cursor: pointer;
+    color: #ea732b;
+    margin: 0 .4rem;
+    font-size: 1.5em;
+}
+
+.profil-icons i:hover{
+    color: #ffad39;
+}
+
+#profil-img{
+    margin-right: 2em;
+}
+
+#profil-infos{
+    margin-left: 2em;
+}
+
+#profil h1, #case-master-container h1{
     text-align: center;
+    margin-bottom: 0;
+}
+
+#profil-content-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#profil-img img{
+    border-radius: 50%;
+}
+
+#profil-infos ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+#profil-infos li{
+    margin: .5em 0;
+}
+
+#profil-infos a{
     color: white;
 }
 
+
 /* CASES */
+
+#case-master-container{
+    color: white;
+}
 
 #case-container{
     width: 100%;

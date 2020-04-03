@@ -96,13 +96,11 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
         </div>
     </div>
 
-
-
-
     <!-- FOOTER -->
     <?php
     include "partials/php/footer.php";
     ?>
+    
     <!-- SLIDESHOW SCRIPT -->
     <script src="script.js"></script>
     <!-- FONT AWESOME KIT -->
