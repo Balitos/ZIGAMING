@@ -1,3 +1,4 @@
+
 <!-- HEADER -->
 <header>
     <div class="contener">
@@ -11,7 +12,7 @@
                         <i class="fas fa-plus"></i>
                     </button>
                 </a>
-                <a class="header-link" href="javascript:history.back()">
+                <a class="header-link" href="../../pages/profil/index.php?id=<?php echo $_SESSION['id']?>">
                     <button type="submit" class="header-co-contour" name="login-btn">
                         <i class="far fa-user-circle"></i>
                     </button>
