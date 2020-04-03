@@ -96,7 +96,11 @@ try {
 if(isset($_SESSION['id']))
 {
 ?>
-  <div class="grix xs1 txt-center grey light-3">
+        <?php
+        include "../../partials/php/headerCo.php";
+        ?>
+<div id="wrapper">
+<div class="grix xs1 txt-center grey light-3">
     <div>
       <h3>Vends ton article</h3>
     </div>
@@ -202,7 +206,13 @@ if(isset($_SESSION['id']))
       </div>
       <input type="submit" name="annonce_submit" value="Envoyez vos jeux">
     </form>
+    <br>
   </div>
+</div>
+    <!-- FOOTER -->
+    <?php
+    include "../../partials/php/footer.php";
+    ?>
 <?php } else {
     header('Location: ../login/');
 }
