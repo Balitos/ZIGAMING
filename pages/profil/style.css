@@ -1,5 +1,6 @@
 @import url("../../partials/css/base.css");
 @import url("../../partials/css/header.css");
+@import url("../../partials/css/footer.css");
 
 
 /* PROFIL */
@@ -55,10 +56,12 @@
 
 #profil-infos li{
     margin: .5em 0;
+    color: white;
 }
 
-#profil-infos a{
-    color: white;
+#profil-infos span{
+    color: #ea732b;
+    font-weight: bold;
 }
 
 

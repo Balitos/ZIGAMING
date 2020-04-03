@@ -1,7 +1,37 @@
 @import url("../../partials/css/base.css");
+@import url("../../partials/css/header.css");
+@import url("../../partials/css/footer.css");
 
 /* PROFIL */
 
-#profil{
+h2{
     text-align: center;
+    color: white;
+}
+
+#ed-profil{
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4em;
+}
+
+form{
+    text-align: left;
+}
+
+form label{
+    font-size: 1em;
+    margin-bottom: .2em;
+}
+
+form input{
+    width: 20em;
+    height: 3em;
+}
+
+.form-field{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5em;
 }

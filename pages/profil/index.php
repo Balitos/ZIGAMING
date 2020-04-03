@@ -39,14 +39,12 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
     <body>
         <!-- HEADER -->
         <?php
-        if (isset($_SESSION['id'])) {
-        ?>
-            <!-- HEADER -->
-            <?php
+        if (isset($_SESSION['id']))
+        {
             include "../../partials/php/headerCo.php";
-            ?>
-        <?php
-        } else {
+        }
+        else
+        {
             include "../../partials/php/header.php";
         }
         ?>
@@ -80,16 +78,16 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
                         <div id="profil-infos">
                             <ul>
                                 <li>
-                                    Pseudo : <?php echo $userinfo['pseudo']; ?>
+                                    <span>Pseudo : </span><?php echo $userinfo['pseudo']; ?>
                                 </li>
                                 <li>
-                                    Mail : <?php echo $userinfo['mail']; ?>
+                                    <span>Mail : </span><?php echo $userinfo['mail']; ?>
                                 </li>
                                 <li>
-                                    Description profil : <?php echo $userinfo['descriptionProfil']; ?>
+                                    <span>Description profil : </span><?php echo $userinfo['descriptionProfil']; ?>
                                 </li>
                                 <li>
-                                    Adresse : <?php echo $userinfo['adresse']; ?>
+                                    <span>Adresse : </span><?php echo $userinfo['adresse']; ?>
                                 </li>
                                 <?php
                                 if (isset($_SESSION['id']) and $userinfo['id'] == $_SESSION['id']) {
@@ -147,6 +145,12 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
                 </div>
             </div>
         </div>
+
+        <!-- FOOTER -->
+        <?php
+        include "../../partials/php/footer.php";
+        ?>
+
         <!-- FONT AWESOME KIT -->
         <script src="https://kit.fontawesome.com/e6c2645393.js" crossorigin="anonymous"></script>
     </body>
