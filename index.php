@@ -23,22 +23,20 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
 <body>
 
     <?php
-    if (isset($_SESSION['id'])) {
+    if (isset($_SESSION['id']))
+    {
     ?>
-
         <!-- HEADER -->
         <?php
         include "partials/php/headerCo.php";
         ?>
-
     <?php
-    } else {
-        
+    }
+    else
+    {
         include "partials/php/header.php";
     }
     ?>
-
-
 
     <!-- WRAPPER -->
     <div id="wrapper">
