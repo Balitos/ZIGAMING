@@ -1,6 +1,6 @@
 <!-- HEADER -->
 <header>
-    <div class="container">
+    <div class="contener">
         <div id="header-wrap">
             <div id="header-logo">
                 <h1>ZI<span>GAMING</span></h1>

@@ -27,7 +27,7 @@ $reponse = $bdd->query("SELECT numeroAnnonce, console, titre, prix, photo, descr
     ?>
     <!-- WRAPPER -->
     <div id="wrapper">
-        <div class="container">
+        <div class="contener">
             <!-- SLIDESHOW -->
             <div class="slideshow-master-container">
             <div id="dot-container">
@@ -68,13 +68,15 @@ $reponse = $bdd->query("SELECT numeroAnnonce, console, titre, prix, photo, descr
                     </a>
                     </div>
                     <div class="case-infos">
-                    <?php echo $variable['titre'] ?>
-                    <br>
-                    <br>
-                    <?php echo $variable['console'] ?>
+                        <div class="case-infos-titre">
+                            <?php echo $variable['titre'] ?>
+                        </div>
+                        <div class="case-infos-console">
+                            <?php echo $variable['console'] ?>
+                        </div>
                     </div>
                     <div class="case-price">
-                    <?php echo $variable['prix'] ?> €
+                    <?php echo $variable['prix'] ?>€
                     </div>
                 </div>
                 <?php

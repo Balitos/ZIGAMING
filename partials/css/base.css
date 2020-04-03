@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
 
+
 /* BODY */
 
 body{
@@ -9,14 +10,18 @@ body{
     background-color: #262626;
 }
 
-
 /* CONTAINER */
 
-.container{
+.contener{
     width: 1140px;
     margin: 0 auto;
 }
 
+/* WRAPPER */
+
+#wrapper{
+  padding-top: 5.5rem;
+}
 
 
 /* MEDIA QUERIES */

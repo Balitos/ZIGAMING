@@ -47,36 +47,33 @@ if(isset($_POST['connect_submit']))
 </head>
 
 <body>
-    <!-- WRAPPER -->
-    <div id="wrapper">
-        <!-- FORMULAIRE -->
-        <div id="formulaire">
-            <form method="POST" action="">
-                <h1>Bon retour parmis nous</h1>
-                <div class="register-form-inputs">
-                    <div class="register-input-box">
-                        <i class="fas fa-envelope"></i>
-                        <input type="email" name="mailConnect" placeholder="Email" value="<?php if(isset($mail)) { echo $mail; } ?>">
-                    </div>
-
-                    <div class="register-input-box">
-                        <i class="fas fa-unlock"></i>
-                        <input type="password" name="mdpConnect" placeholder="Mot de passe">
-                    </div>
-
+    <!-- FORMULAIRE -->
+    <div id="formulaire">
+        <form method="POST" action="">
+            <h1>Bon retour parmis nous</h1>
+            <div class="register-form-inputs">
+                <div class="register-input-box">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="mailConnect" placeholder="Email" value="<?php if(isset($mail)) { echo $mail; } ?>">
                 </div>
-                <div id="gestion-erreurs">
-                    <?php
-                        if(isset($erreur))
-                        {
-                            echo $erreur;
-                        }
-                    ?>
+
+                <div class="register-input-box">
+                    <i class="fas fa-unlock"></i>
+                    <input type="password" name="mdpConnect" placeholder="Mot de passe">
                 </div>
-                <button class="form-submit" type="submit" name="connect_submit">Connection</button>
-                <p class="register-login">ou <a href="../register/" title="Login">Créer un compte</a></p>
-            </form>
-        </div>
+
+            </div>
+            <div id="gestion-erreurs">
+                <?php
+                    if(isset($erreur))
+                    {
+                        echo $erreur;
+                    }
+                ?>
+            </div>
+            <button class="form-submit" type="submit" name="connect_submit">Connection</button>
+            <p class="register-login">ou <a href="../register/" title="Login">Créer un compte</a></p>
+        </form>
     </div>
     <!-- FONT AWESOME KIT -->
     <script src="https://kit.fontawesome.com/e6c2645393.js" crossorigin="anonymous"></script>

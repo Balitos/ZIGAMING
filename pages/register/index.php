@@ -73,45 +73,42 @@ if(isset($_POST['register_submit']))
 </head>
 
 <body>
-    <!-- WRAPPER -->
-    <div id="wrapper">
-        <!-- FORMULAIRE -->
-        <div id="formulaire">
-            <form method="POST" action="">
-                <h1>Devient un membre de la famille</h1>
-                <div class="register-form-inputs">
-                    <div class="register-input-box">
-                        <i class="fas fa-user"></i>
-                        <input type="text" name="pseudo" placeholder="Pseudo" value="<?php if(isset($pseudo)) { echo $pseudo; } ?>">
-                    </div>
-
-                    <div class="register-input-box">
-                        <i class="fas fa-envelope"></i>
-                        <input type="email" name="mail" placeholder="Email" value="<?php if(isset($mail)) { echo $mail; } ?>">
-                    </div>
-
-                    <div class="register-input-box">
-                        <i class="fas fa-unlock"></i>
-                        <input type="password" name="mdp" placeholder="Mot de passe">
-                    </div>
-
-                    <div class="register-input-box">
-                        <i class="fas fa-unlock"></i>
-                        <input type="password" name="mdp2" placeholder="Confirmez votre mot de passe">
-                    </div>
+    <!-- FORMULAIRE -->
+    <div id="formulaire">
+        <form method="POST" action="">
+            <h1>Devient un membre de la famille</h1>
+            <div class="register-form-inputs">
+                <div class="register-input-box">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="pseudo" placeholder="Pseudo" value="<?php if(isset($pseudo)) { echo $pseudo; } ?>">
                 </div>
-                <div id="gestion-erreurs">
-                    <?php
-                        if(isset($erreur))
-                        {
-                            echo $erreur;
-                        }
-                    ?>
+
+                <div class="register-input-box">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="mail" placeholder="Email" value="<?php if(isset($mail)) { echo $mail; } ?>">
                 </div>
-                <button class="form-submit" type="submit" name="register_submit">Créer</button>
-                <p class="register-login">ou <a href="../login/" title="Login">Se connecter</a></p>
-            </form>
-        </div>
+
+                <div class="register-input-box">
+                    <i class="fas fa-unlock"></i>
+                    <input type="password" name="mdp" placeholder="Mot de passe">
+                </div>
+
+                <div class="register-input-box">
+                    <i class="fas fa-unlock"></i>
+                    <input type="password" name="mdp2" placeholder="Confirmez votre mot de passe">
+                </div>
+            </div>
+            <div id="gestion-erreurs">
+                <?php
+                    if(isset($erreur))
+                    {
+                        echo $erreur;
+                    }
+                ?>
+            </div>
+            <button class="form-submit" type="submit" name="register_submit">Créer</button>
+            <p class="register-login">ou <a href="../login/" title="Login">Se connecter</a></p>
+        </form>
     </div>
     <!-- FONT AWESOME KIT -->
     <script src="https://kit.fontawesome.com/e6c2645393.js" crossorigin="anonymous"></script>

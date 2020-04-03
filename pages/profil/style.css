@@ -1,7 +1,57 @@
 @import url("../../partials/css/base.css");
+@import url("../../partials/css/header.css");
+
 
 /* PROFIL */
 
 #profil{
     text-align: center;
+    color: white;
+}
+
+/* CASES */
+
+#case-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 8em);
+    grid-template-rows: repeat(2, 16em);
+    grid-row-gap: 1.7em;
+    grid-row-gap: 2em;
+    margin-bottom: 4em;
+    justify-content: space-between;
+}
+
+.case{
+    background-color: grey;
+    border-radius: 1.1rem;
+}
+
+.case-img{
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    height: 50%;
+}
+
+.case-infos{
+    height: 38%;
+    background-color: #333;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.case-price{
+    height: 12%;
+    background-color: #ea732b;;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+    color: white;
+    padding-right: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    font-size: 1.1rem;
 }
