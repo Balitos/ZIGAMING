@@ -52,17 +52,17 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
                 <div class="slideshow-container">
                     <div class="mySlides fade">
                         <div class="numbertext">1 / 3</div>
-                        <img src="/assets/images/slideshow/1.jpg">
+                        <img src="/assets/images/slideshow/csgo.jpg">
                     </div>
 
                     <div class="mySlides fade">
                         <div class="numbertext">2 / 3</div>
-                        <img src="/assets/images/slideshow/2.jpg">
+                        <img src="/assets/images/slideshow/r6.jpg">
                     </div>
 
                     <div class="mySlides fade">
                         <div class="numbertext">3 / 3</div>
-                        <img src="/assets/images/slideshow/3.jpg">
+                        <img src="/assets/images/slideshow/tw3.jpg">
                     </div>
                 </div>
 
@@ -74,20 +74,20 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
                 while ($variable = $reponse->fetch()) {
                 ?>
                     <div class="case">
-                        <div class="case-img">
-                            <a href="pages/annonce/pageAnnonce.php?annonce=<?php echo $variable['numeroAnnonce'] ?>" class="case-img">
+                        <a href="pages/annonce/pageAnnonce.php?annonce=<?php echo $variable['numeroAnnonce'] ?>">
+                            <div class="case-img">
                                 <img src="assets/membres/annonce/<?php echo $variable['photo'] ?>" class="case-img" style="height:100%; width:100%;">
-                            </a>
-                        </div>
-                        <div class="case-infos">
-                            <?php echo $variable['titre'] ?>
-                            <br>
-                            <br>
-                            <?php echo $variable['console'] ?>
-                        </div>
-                        <div class="case-price">
-                            <?php echo $variable['prix'] ?> €
-                        </div>
+                            </div>
+                            <div class="case-infos">
+                                <?php echo $variable['titre'] ?>
+                                <br>
+                                <br>
+                                <?php echo $variable['console'] ?>
+                            </div>
+                            <div class="case-price">
+                                <?php echo $variable['prix'] ?> €
+                            </div>
+                        </a>
                     </div>
                 <?php
                 }

@@ -85,6 +85,17 @@
 .case{
     background-color: grey;
     border-radius: 1.1rem;
+    transition: transform .2s;
+}
+
+.case:hover{
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
+}
+
+.case a{
+    border-radius: 1.1rem;
+    text-decoration: none;
 }
 
 .case-img{

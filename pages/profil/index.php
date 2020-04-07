@@ -70,7 +70,7 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
                             <?php
                             if (!empty($userinfo['avatar'])) {
                             ?>
-                                <img src="../../assets/membres/avatars/<?php echo $userinfo['avatar']; ?>" alt="Avatar">
+                                <img src="/assets/membres/avatars/<?php echo $userinfo['avatar']; ?>" alt="Avatar">
                             <?php
                             }
                             ?>
@@ -89,15 +89,6 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
                                 <li>
                                     <span>Adresse : </span><?php echo $userinfo['adresse']; ?>
                                 </li>
-                                <?php
-                                if (isset($_SESSION['id']) and $userinfo['id'] == $_SESSION['id']) {
-                                ?>
-                                    <li>
-                                        <!-- <a href="../../">Retour à l'Accueil</a> -->
-                                    </li>
-                                <?php
-                                }
-                                ?>
                             </ul>
                         </div>
                     </div>
@@ -121,22 +112,22 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
                         while ($variable = $reponse->fetch()) {
                         ?>
                             <div class="case">
-                                <div class="case-img">
-                                    <a href="../../pages/annonce/pageAnnonce.php?annonce=<?php echo $variable['numeroAnnonce'] ?>" class="case-img">
+                                <a href="../../pages/annonce/pageAnnonce.php?annonce=<?php echo $variable['numeroAnnonce'] ?>">
+                                    <div class="case-img">
                                         <img src="/assets/membres/annonce/<?php echo $variable['photo'] ?>" class="case-img" style="height:100%; width:100%;">
-                                    </a>
-                                </div>
-                                <div class="case-infos">
-                                    <div class="case-infos-titre">
-                                        <?php echo $variable['titre'] ?>
                                     </div>
-                                    <div class="case-infos-console">
-                                        <?php echo $variable['console'] ?>
+                                    <div class="case-infos">
+                                        <div class="case-infos-titre">
+                                            <?php echo $variable['titre'] ?>
+                                        </div>
+                                        <div class="case-infos-console">
+                                            <?php echo $variable['console'] ?>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="case-price">
-                                    <?php echo $variable['prix'] ?>€
-                                </div>
+                                    <div class="case-price">
+                                        <?php echo $variable['prix'] ?>€
+                                    </div>
+                                </a>
                             </div>
                         <?php
                         }

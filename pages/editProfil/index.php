@@ -137,35 +137,43 @@ if (isset($_SESSION['id'])) {
             <h2>Edition de mon profil</h2>
             <div id="ed-profil">
                 <form method="POST" action="" enctype="multipart/form-data">
-                    <div class="form-field">
-                        <label>Pseudo</label>
-                        <input type="text" name="newpseudo" placeholder="Pseudo" value="<?php echo $user['pseudo']; ?>" />
+                    <div class="form-section">
+                        <div id="form-avatar">
+                            <label>Avatar</label>
+                            <div id="form-avatar-img">
+                                <img src="/assets/images/photo-avatar-profil.png" alt="Avatar profil">
+                                <input type="file" name="avatar">
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label>Pseudo</label>
+                            <input type="text" name="newpseudo" value="<?php echo $user['pseudo']; ?>" />
+                        </div>
+                        <div class="form-field">
+                            <label>Description profil</label>
+                            <textarea name="descriptionProfil"><?php echo $user['descriptionProfil']; ?></textarea>
+                        </div>
                     </div>
-                    <div class="form-field">
-                        <label>Mail</label>
-                        <input type="text" name="newmail" placeholder="Mail" value="<?php echo $user['mail']; ?>" />
+                    <div class="form-section">
+                        <div class="form-field">
+                            <label>Mail</label>
+                            <input type="text" name="newmail" value="<?php echo $user['mail']; ?>" />
+                        </div>
+                        <div class="form-field">
+                            <label>Adresse</label>
+                            <input type="text" name="adresse" value="<?php echo $user['adresse']; ?>"/>
+                        </div>
+
+                        <div class="form-field">
+                            <label>Mot de passe</label>
+                            <input type="password" name="newmdp1"/>
+                        </div>
+                        <div class="form-field">
+                            <label>Confirmation mot de passe</label>
+                            <input type="password" name="newmdp2"/>
+                        </div>
+                        <input type="submit" value="Mettre à jour" id="submit">
                     </div>
-                    <div class="form-field">
-                        <label>Adresse</label>
-                        <input type="text" name="adresse" placeholder="Adresse"/>
-                    </div>
-                    <div class="form-field">
-                        <label>Description profil</label>
-                        <textarea name="descriptionProfil" cols="" rows="" placeholder="Description profil"></textarea>
-                    </div>
-                    <div class="form-field">
-                        <label>Mot de passe</label>
-                        <input type="password" name="newmdp1" placeholder="Mot de passe" />
-                    </div>
-                    <div class="form-field">
-                        <label>Confirmation mot de passe</label>
-                        <input type="password" name="newmdp2" placeholder="Confirmation mot de passe" />
-                    </div>
-                    <div class="form-field">
-                        <label>Avatar</label>
-                        <input type="file" name="avatar">
-                    </div>
-                    <input type="submit" value="Mettre à jour">
                 </form>
                 <?php if (isset($msg)) {
                     echo $msg;
