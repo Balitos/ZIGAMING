@@ -74,16 +74,18 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
                 while ($variable = $reponse->fetch()) {
                 ?>
                     <div class="case">
-                        <a href="pages/annonce/pageAnnonce.php?annonce=<?php echo $variable['numeroAnnonce'] ?>">
+                        <a href="pages/annonce/index.php?annonce=<?php echo $variable['numeroAnnonce'] ?>">
                             <div class="case-img">
-                                <img src="assets/membres/annonce/<?php echo $variable['photo'] ?>" class="case-img" style="height:100%; width:100%;">
+                                <img src="assets/membres/annonce/<?php echo $variable['photo'] ?>">
                             </div>
                             <div class="case-infos">
-                                <?php echo $variable['titre'] ?>
-                                <br>
-                                <br>
-                                <?php echo $variable['console'] ?>
-                            </div>
+                                    <div class="case-infos-titre">
+                                        <?php echo $variable['titre'] ?>
+                                    </div>
+                                    <div class="case-infos-console">
+                                        <?php echo $variable['console'] ?>
+                                    </div>
+                                </div>
                             <div class="case-price">
                                 <?php echo $variable['prix'] ?> €
                             </div>

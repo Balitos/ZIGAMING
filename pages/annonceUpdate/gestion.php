@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../../../includes/functions.php';
+require_once '../../includes/functions.php';
 
 try {
   $bdd = new PDO('mysql:host=127.0.0.1;dbname=zigaming;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));

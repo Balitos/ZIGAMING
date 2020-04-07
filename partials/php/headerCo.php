@@ -8,7 +8,7 @@
                 </a>
             </div>
             <div id="header-connection">
-                <a class="header-link" href="../../pages/annonce/">
+                <a class="header-link" href="../../pages/annonceAdd/">
                     <button type="submit" class="header-co-contour" name="annonce-btn">
                         <i class="fas fa-plus"></i>
                     </button>

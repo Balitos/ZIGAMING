@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../../../includes/functions.php';
+require_once '../../includes/functions.php';
 ?>
 
 
@@ -52,7 +52,7 @@ require_once '../../../includes/functions.php';
       ?>
         <div class="card airforce light-1">
           <div class="card-image">
-            <img src="../../../assets/membres/annonce/<?php echo $variable['photo'] ?> " alt="photoJeu" />
+            <img src="/assets/membres/annonce/<?php echo $variable['photo'] ?> " alt="photoJeu" />
           </div>
           <div class="card-header"> <?php echo $variable['titre']  ?> </div>
           <div class="divider"></div>
@@ -65,7 +65,7 @@ require_once '../../../includes/functions.php';
           <?php echo $variable['prix']  ?> €</div>
           <div class="grix xs2">
             <div>
-              <a href="../gestionAnnonces/gestion.php?annonce=<?php echo $variable['numeroAnnonce'] ?>" class="btn outline txt-black txt-center"><span class="outline-text txt-center">Choisir</span></a>
+              <a href="gestion.php?annonce=<?php echo $variable['numeroAnnonce'] ?>" class="btn outline txt-black txt-center"><span class="outline-text txt-center">Choisir</span></a>
             </div>
             <div>
               <form method="post">
@@ -105,25 +105,13 @@ require_once '../../../includes/functions.php';
 
 
   <?php } else {
-    header('Location: ../../login/');
+    header('Location: ../login/');
   }
-
-
-
 
   ?>
 
-
-
-
-
-
   </div>
-  <!-- JAVASCRIPT -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 
-  <!-- FONT AWESOME KIT -->
-  <script src="https://kit.fontawesome.com/e6c2645393.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
