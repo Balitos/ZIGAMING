@@ -1,0 +1,17 @@
+@import url(".././../partials/css/base.css");
+@import url("../../../partials/css/header.css");
+@import url("../../../partials/css/footer.css");
+@import url("../../../style.css");
+
+
+/* carte */
+
+#card_vendeur {
+
+    height: 20em;
+    max-width: auto;
+    min-width: auto;
+    background: rgb(64, 64, 64);
+    margin-top: 2em;
+    border-radius: 1.6rem;
+}
