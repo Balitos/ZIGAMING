@@ -3,6 +3,7 @@
 if(isset($_POST['mailform']))
 {
     $nom = htmlspecialchars($_POST['nom']);
+    $prenom = htmlspecialchars($_POST['prenom']);
     $mail = htmlspecialchars($_POST['mail']);
     $message = htmlspecialchars($_POST['message']);
     if(!empty($nom) AND !empty($mail) AND !empty($message))
@@ -17,8 +18,9 @@ if(isset($_POST['mailform']))
             <body>
                 <div align="center">
                     <br />
-                    <u>Nom de l\'expéditeur :</u>'.$nom.'<br />
-                    <u>Mail de l\'expéditeur :</u>'.$mail.'<br />
+                    <u>Nom de l\'expéditeur : </u>'.$nom.'<br />
+                    <u>Prénom de l\'expéditeur : </u>'.$prenom.'<br />
+                    <u>Mail de l\'expéditeur : </u>'.$mail.'<br />
                     <br />
                     '.nl2br($message).'
                     <br />
@@ -37,26 +39,68 @@ if(isset($_POST['mailform']))
 }
 ?>
 
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h2>Formulaire de contact</h2>
-    <form method="POST" action="">
-        <input type="text" name="nom" placeholder="Votre nom" value="<?php if(isset($_POST['nom'])) { echo $_POST['nom']; } ?>"><br><br>
-        <input type="email" name="mail" placeholder="Votre mail" value="<?php if(isset($_POST['mail'])) { echo $_POST['mail']; } ?>"><br><br>
-        <textarea name="message" placeholder="Votre message"><?php if(isset($_POST['message'])) { echo $_POST['message']; } ?></textarea><br><br>
-        <input type="submit" value="Envoyer" name="mailform">
-    </form>
     <?php
-    if(isset($msg))
+    include "../../partials/php/head.php";
+    ?>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <?php
+    if (isset($_SESSION['id']))
     {
-        echo $msg;
+        include "../../partials/php/headerCo.php";
+    }
+    else
+    {
+        include "../../partials/php/header.php";
     }
     ?>
+
+    <!-- WRAPPER -->
+    <div id="wrapper">
+        <div class="contener">
+            <!-- CONTACT -->
+            <h2 id="form-title">Formulaire de contact</h2>
+            <div id="contact-wrap">
+                <div class="contact-box">
+                    <form id="form" action="" method="post">
+                        <label>Nom</label>
+                        <input class="form-item" type="text" name="nom" value="<?php if(isset($_POST['nom'])) { echo $_POST['nom']; } ?>">
+                        <label>Prénom</label>
+                        <input class="form-item" type="text" name="prenom" value="<?php if(isset($_POST['prenom'])) { echo $_POST['prenom']; } ?>">
+                        <label>Email</label>
+                        <input class="form-item" type="email" name="mail" value="<?php if(isset($_POST['mail'])) { echo $_POST['mail']; } ?>">
+                        <label>Votre message</label>
+                        <textarea class="form-item" name="message"><?php if(isset($_POST['message'])) { echo $_POST['message']; } ?></textarea>
+                        <input type="submit" value="Envoyer" name="mailform" id="submit">
+                    </form>
+                    <div id="msg-box">
+                        <?php
+                        if(isset($msg))
+                        {
+                            echo $msg;
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <?php
+    include "../../partials/php/footer.php";
+    ?>
+
+    <!-- FONT AWESOME KIT -->
+    <script src="https://kit.fontawesome.com/e6c2645393.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

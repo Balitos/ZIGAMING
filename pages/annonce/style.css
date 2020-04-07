@@ -2,6 +2,29 @@
 @import url("../../partials/css/header.css");
 @import url("../../partials/css/footer.css");
 
+
+#raw-title{
+    margin: 2em 0 1em 0;
+    color: white;
+}
+
+#raw-submit{
+    margin: 2em 0;
+    width: 10em;
+    height: 3em;
+    background: #ea732b;
+    border: none;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#raw-submit:hover{
+    background: #ffad39;
+}
+
 #gestion-erreurs{
     color: red;
     font-size: 15px;
@@ -21,7 +44,6 @@
 
 #titre {
     margin-top: 2em;
-    
 }
 
 #description {

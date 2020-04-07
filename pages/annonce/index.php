@@ -96,12 +96,12 @@ try {
 if(isset($_SESSION['id']))
 {
 ?>
-        <?php
-        include "../../partials/php/headerCo.php";
-        ?>
+  <?php
+  include "../../partials/php/headerCo.php";
+  ?>
 <div id="wrapper">
-<div class="grix xs1 txt-center grey light-3">
-    <div>
+<div class="grix xs1 txt-center">
+    <div id="raw-title">
       <h3>Vends ton article</h3>
     </div>
     <form name="formulaire_annonce" method="POST" onsubmit="return verif_champ(prix)" enctype="multipart/form-data">
@@ -204,7 +204,7 @@ if(isset($_SESSION['id']))
           </div>
         </div>
       </div>
-      <input type="submit" name="annonce_submit" value="Envoyez vos jeux">
+      <input type="submit" name="annonce_submit" value="Envoyez vos jeux" id="raw-submit">
     </form>
     <br>
   </div>
