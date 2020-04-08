@@ -15,5 +15,3 @@ function update($nom_table, $elementUpdate, $post, $numeroAnnonce){
     $req->closeCursor();
 
 }
-
-

@@ -73,7 +73,7 @@
 
 #pc-img{
     width: 100%;
-    height: 40%;
+    height: 50%;
 }
 
 #pc-img img{
@@ -91,7 +91,7 @@
 
 #pc-description{
     width: 100%;
-    height: 40%;
+    height: 30%;
     display: flex;
     align-items: center;
     justify-content: center;

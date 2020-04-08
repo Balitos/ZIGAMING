@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+ob_start();
 
 // REQUETE PROFIL
 try {
@@ -64,6 +64,12 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
                     </div>
                 <?php
                 }
+                else
+                {
+                ?>
+                    <div class="whitespace"></div>
+                <?php
+                }
                 ?>
                 <div id="profil-content-container">
                     <div id="profil-img">
@@ -101,11 +107,67 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
                 ?>
                     <div class="profil-icons">
                         <a href="../annonceAdd/"><i class="fas fa-plus-square"></i></a>
-                        <a href="../annonceUpdate/choixGestion.php"><i class="fas fa-edit"></i></a>
                     </div>
+                <div id="case-container">
+                    <?php
+                    $variable = "";
+                    while ($variable = $reponse->fetch()) {
+                        $jeuToDell = $variable['numeroAnnonce'];
+                    ?>
+                        <div class="case">
+                            <a href="../annonce/index.php?annonce=<?php echo $variable['numeroAnnonce'] ?>">
+                                <div class="case-img">
+                                    <img src="/assets/membres/annonce/<?php echo $variable['photo'] ?>">
+                                </div>
+                            </a>    
+                            <div class="case-infos">
+                                <div class="case-infos-titre">
+                                    <a href="../annonce/index.php?annonce=<?php echo $variable['numeroAnnonce'] ?>">
+                                        <?php echo $variable['titre'] ?>
+                                    </a>  
+                                </div>
+                                <div class="case-infos-console">
+                                    <?php echo $variable['console'] ?>
+                                </div>
+                            </div>
+                            <div class="case-price">
+                                <form method="post">
+                                    <button type="submit" id="case-price-delete" name="supprimer_jeu<?php echo $variable['numeroAnnonce'] ?>">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </form>
+                                <p>
+                                    <?php echo $variable['prix'] ?>€
+                                </p>
+                                <a href="../annonceUpdate/index.php?annonce=<?php echo $variable['numeroAnnonce'] ?>">
+                                    <i class="far fa-edit"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <?php
+                        if (isset($_POST['supprimer_jeu' . $variable['numeroAnnonce']]))
+                        {
+                            try {
+                            $bdd = new PDO('mysql:host=localhost;dbname=zigaming;charset=utf8', 'root', '');
+                            } catch (Exception $e) {
+                            die('Erreur : ' . $e->getMessage());
+                            }
+
+                            $req = $bdd->prepare("DELETE FROM annonce WHERE numeroAnnonce= '$jeuToDell'");
+                            $req->execute(['numeroAnnonce' => $jeuToDell]);
+                            $req->closeCursor();
+                            header("Location: index.php?id=".$_SESSION['id']);
+                        }
+                    }
+                    $reponse->closeCursor();
+                    ?>
+                </div>
                 <?php
                 }
+                else
+                {
                 ?>
+                <div class="whitespace"></div>
                 <div id="case-container">
                     <?php
                     $variable = "";
@@ -133,6 +195,9 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
                     }
                     ?>
                 </div>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </div>

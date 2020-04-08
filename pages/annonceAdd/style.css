@@ -57,14 +57,19 @@
     margin-top: 2em;
 }
 
-/* carte */
+/* CARTE */
 
 #card_vendeur {
-
     height: 20em;
     max-width: auto;
     min-width: auto;
     background: rgb(64, 64, 64);
     margin-top: 2em;
     border-radius: 1.6rem;
+}
+
+/* FOOTER */
+
+footer a{
+    text-decoration: underline;
 }

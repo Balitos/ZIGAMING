@@ -95,7 +95,12 @@
 
 .case a{
     border-radius: 1.1rem;
+    color: white;
     text-decoration: none;
+}
+
+.case a:hover{
+    text-decoration: underline;
 }
 
 .case-img{
@@ -127,9 +132,73 @@
     border-bottom-left-radius: inherit;
     border-bottom-right-radius: inherit;
     color: white;
-    padding-right: .5em;
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: space-around;
     font-size: 1.1rem;
+}
+
+.case-price i{
+    cursor: pointer;
+    color: white;
+    font-size: 1em;
+    transition: transform .2s;
+}
+
+.case-price i:hover{
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+#case-price-delete{
+    border: none;
+    background-color: inherit;
+    font-size: 1em;
+}
+
+.whitespace{
+    margin-bottom: 2.5em;
+}
+
+
+/* MEDIA QUERIES */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+    /* CASES */
+    #case-container{
+        grid-template-columns: repeat(2, 8em);
+        grid-template-rows: repeat(6, 16em);
+        justify-content: space-around;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width:601px) and (max-width: 768px) {
+    /* CASES */
+    #case-container{
+        grid-template-columns: repeat(3, 8em);
+        grid-template-rows: repeat(4, 16em);
+        justify-content: space-around;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width:769px) and (max-width: 992px) {
+    /* CASES */
+    #case-container{
+        grid-template-columns: repeat(4, 8em);
+        grid-template-rows: repeat(3, 16em);
+        justify-content: space-around;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width:993px) and (max-width: 1200px) {
+    /* CASES */
+    #case-container{
+        grid-template-columns: repeat(4, 8em);
+        grid-template-rows: repeat(3, 16em);
+        justify-content: space-around;
+    }
 }
