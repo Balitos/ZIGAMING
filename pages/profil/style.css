@@ -28,6 +28,16 @@
 
 #profil-img{
     margin-right: 2em;
+    width: 17em;
+    height: 17em;
+    border-radius: 50%;
+}
+
+#profil-img img{
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
 }
 
 #profil-infos{
@@ -43,10 +53,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#profil-img img{
-    border-radius: 50%;
 }
 
 #profil-infos ul{
