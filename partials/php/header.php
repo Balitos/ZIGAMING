@@ -7,6 +7,16 @@
                     <h1>ZI<span>GAMING</span></h1>
                 </a>
             </div>
+            <form method="GET" action="../../pages/recherche">
+       <!--     <datalist id="filtre">
+                <option value="PS3">
+                <option value="PS4">
+                <option value="xbox369">
+                <option value="XBOXONE">
+            </datalist> -->
+                <input type="search" name="recherche" placeholder="Recherche..." />
+                <input type="submit" value="Valider" />
+            </form>
             <div id="header-connection">
                 <a class="header-link" href="../../pages/login/">
                     <button type="submit" class="header-co-contour" name="annonce-btn">
