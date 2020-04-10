@@ -177,6 +177,15 @@
         grid-template-rows: repeat(6, 16em);
         justify-content: space-around;
     }
+
+    /* PROFIL */
+    #profil-content-container{
+        flex-direction: column;
+    }
+
+    #profil-img{
+        margin: 1em 0;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -186,6 +195,15 @@
         grid-template-columns: repeat(3, 8em);
         grid-template-rows: repeat(4, 16em);
         justify-content: space-around;
+    }
+
+    /* PROFIL */
+    #profil-content-container{
+        flex-direction: column;
+    }
+
+    #profil-img{
+        margin: 1em 0;
     }
 }
 

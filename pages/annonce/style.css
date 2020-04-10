@@ -113,3 +113,66 @@
 #pc-link a:hover{
     color: rgb(184, 184, 184);
 }
+
+
+/* MEDIA QUERIES */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+    #cards-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #game-card{
+        width: auto;
+        height: 30em;
+        margin-bottom: 2em;
+    }
+
+    #cards-title{
+        text-align: center;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width:601px) and (max-width: 768px) {
+    #cards-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #game-card{
+        width: auto;
+        height: 30em;
+        margin-bottom: 2em;
+    }
+
+    #cards-title{
+        text-align: center;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width:769px) and (max-width: 992px) {
+    #cards-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #game-card{
+        width: auto;
+        height: 30em;
+        margin-bottom: 2em;
+    }
+
+    #cards-title{
+        text-align: center;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width:993px) and (max-width: 1200px) {
+
+}
+

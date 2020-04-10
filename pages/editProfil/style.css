@@ -86,3 +86,62 @@ form label{
 #submit:hover{
     background: #ffad39;
 }
+
+
+
+/* MEDIA QUERIES */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+    /* FORM */
+    form{
+        flex-direction: column;
+    }
+
+    .form-section{
+        padding: 0 1em;
+    }
+
+    #form-avatar-img{
+        justify-content: flex-start;
+    }
+
+    #form-avatar-img img{
+        margin: .3em .5em 1em 0;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width:601px) and (max-width: 768px) {
+    /* FORM */
+    form{
+        flex-direction: column;
+    }
+
+    .form-section{
+        padding: 0 1em;
+    }
+
+    #form-avatar-img{
+        justify-content: flex-start;
+    }
+
+    #form-avatar-img img{
+        margin: .3em .5em 1em 0;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width:769px) and (max-width: 992px) {
+    /* FORM */
+    .form-section{
+        padding: 0 1em;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width:993px) and (max-width: 1200px) {
+
+}
+
+
