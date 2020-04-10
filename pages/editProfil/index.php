@@ -7,6 +7,8 @@ try {
     die('Erreur : ' . $e->getMessage());
 }
 
+include_once('../login/cookieconnect.php');
+
 if (isset($_SESSION['id'])) {
     $requser = $bdd->prepare("SELECT * FROM membres WHERE id = ?");
     $requser->execute(array($_SESSION['id']));

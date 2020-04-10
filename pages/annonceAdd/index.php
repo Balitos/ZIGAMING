@@ -6,6 +6,7 @@ try {
   die('Erreur : ' . $e->getMessage());
 }
 
+include_once('../login/cookieconnect.php');
 
   $id = $_SESSION['id'];
   $reqannonce = $bdd->prepare("SELECT  numeroAnnonce FROM annonce WHERE id = '$id' ORDER BY numeroAnnonce DESC LIMIT 0,1");

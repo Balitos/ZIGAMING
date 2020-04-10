@@ -9,6 +9,8 @@ try {
     die('Erreur : ' . $e->getMessage());
 }
 
+include_once('../login/cookieconnect.php');
+
 if (isset($_GET['id']) and $_GET['id'] > 0) {
     $getid = intval($_GET['id']);
     $requser = $bdd->prepare('SELECT * FROM membres WHERE id = ?');
@@ -60,7 +62,7 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
                 ?>
                     <div class="profil-icons">
                         <a href="../editProfil/"><i class="fas fa-user-edit"></i></a>
-                        <a href="deconnexion.php"><i class="fas fa-sign-out-alt"></i></a>
+                        <a href="../login/deconnexion.php"><i class="fas fa-sign-out-alt"></i></a>
                     </div>
                 <?php
                 }

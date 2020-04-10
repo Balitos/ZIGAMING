@@ -7,6 +7,8 @@ try {
     die('Erreur : ' . $e->getMessage());
 }
 
+include_once('pages/login/cookieconnect.php');
+
 $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, descriptionJeu FROM annonce");
 ?>
 

@@ -9,6 +9,8 @@ try {
     die('Erreur : ' . $e->getMessage());
 }
 
+include_once('../login/cookieconnect.php');
+
 $getAnnonce = intval($_GET['annonce']);
 $requser = $bdd->prepare('SELECT id, numeroAnnonce, titre, console, prix, photo, descriptionJeu FROM annonce WHERE numeroAnnonce = ?');
 $requser->execute(array($getAnnonce));

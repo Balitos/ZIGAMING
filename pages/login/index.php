@@ -7,18 +7,25 @@ try {
     die('Erreur : ' . $e->getMessage());
 }
 
+include_once('cookieconnect.php');
+
 if(isset($_POST['connect_submit']))
 {
     $mailConnect = htmlspecialchars($_POST['mailConnect']);
     $mdpConnect = $_POST['mdpConnect'];
+    $hashedpass = password_hash($mdpConnect, PASSWORD_DEFAULT);
     if(!empty($mailConnect) AND !empty($mdpConnect))
     {
         $requser = $bdd->prepare("SELECT * FROM membres WHERE mail = ?");
         $requser->execute(array($mailConnect));
         $userexist = $requser->rowCount();
         $result = $requser->fetch();
-        if($userexist == 1 && password_verify($_POST['mdpConnect'], $result['mot_de_passe']))
+        if($userexist == 1 && password_verify($mdpConnect, $result['mot_de_passe']))
         {
+            if(isset($_POST['rememberme'])){
+                setcookie('email', $mailConnect, time()+365*24*3600, null, null, false, true);
+                setcookie('password', $hashedpass, time()+365*24*3600, null, null, false, true);
+            }
             $_SESSION['id'] = $result['id'];
             $_SESSION['pseudo'] = $result['pseudo'];
             $_SESSION['mail'] = $result['mail'];
@@ -61,7 +68,9 @@ if(isset($_POST['connect_submit']))
                     <i class="fas fa-unlock"></i>
                     <input type="password" name="mdpConnect" placeholder="Mot de passe">
                 </div>
-
+            </div>
+            <div id="rester-connecte">
+                <input type="checkbox" name="rememberme" id="remembercheckbox"><label for="remembercheckbox">Se souvenir de moi</label>
             </div>
             <div id="gestion-erreurs">
                 <?php
