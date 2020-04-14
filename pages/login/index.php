@@ -22,14 +22,22 @@ if(isset($_POST['connect_submit']))
         $result = $requser->fetch();
         if($userexist == 1 && password_verify($mdpConnect, $result['mot_de_passe']))
         {
-            if(isset($_POST['rememberme'])){
-                setcookie('email', $mailConnect, time()+365*24*3600, null, null, false, true);
-                setcookie('password', $hashedpass, time()+365*24*3600, null, null, false, true);
+            $confirme = $result['confirme'];
+            if($confirme == 1)
+            {
+                if(isset($_POST['rememberme'])){
+                    setcookie('email', $mailConnect, time()+365*24*3600, null, null, false, true);
+                    setcookie('password', $hashedpass, time()+365*24*3600, null, null, false, true);
+                }
+                $_SESSION['id'] = $result['id'];
+                $_SESSION['pseudo'] = $result['pseudo'];
+                $_SESSION['mail'] = $result['mail'];
+                header("Location: ../profil/index.php?id=".$_SESSION['id']);
             }
-            $_SESSION['id'] = $result['id'];
-            $_SESSION['pseudo'] = $result['pseudo'];
-            $_SESSION['mail'] = $result['mail'];
-            header("Location: ../profil/index.php?id=".$_SESSION['id']);
+            else
+            {
+                $erreur = "Veuillez confirmer votre compte !";
+            }
         }
         else
         {

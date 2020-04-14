@@ -31,9 +31,33 @@ if(isset($_POST['register_submit']))
                     {
                         if($mdp == $mdp2)
                         {
-                            $insertmbr = $bdd->prepare("INSERT INTO membres(pseudo, mail, mot_de_passe) VALUES(?, ?, ?)");
-                            $insertmbr->execute(array($pseudo, $mail, $hashedpass));
+                            $longueurKey = 15;
+                            $key = "";
+                            for($i = 1 ; $i < $longueurKey ; $i++)
+                            {
+                                $key .= mt_rand(0, 9);
+                            }
+
+                            $insertmbr = $bdd->prepare("INSERT INTO membres(pseudo, mail, mot_de_passe, confirmkey) VALUES(?, ?, ?, ?)");
+                            $insertmbr->execute(array($pseudo, $mail, $hashedpass, $key));
                             header('Location: ../login/');
+
+                            $header="MIME-Version: 1.0\r\n";
+                            $header.='From:"ZIgaming.com"<support@ZIgaming.com>'."\n";
+                            $header.='Content-Type:text/html; charset="utf-8"'."\n";
+                            $header.='Content-Transfer-Encoding: 8bit';
+                        
+                            $message='
+                            <html>
+                                <body>
+                                    <div align="center">
+                                        <a href="http://zigaming.test/pages/confirmation/index.php?pseudo='.urlencode($pseudo).'&key='.$key.'">Confirmez votre compte !</a>
+                                    </div>
+                                </body>
+                            </html>
+                            ';
+                        
+                            mail($mail, "Confirmation de compte", $message, $header);
                         }
                         else
                         {
