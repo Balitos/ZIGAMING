@@ -15,8 +15,8 @@
                 <option value="XBOXONE">XBOXONE</option>
                 <option value="xbox360">xbox360</option>
             </select>-->
-                <input type="search" name="recherche" placeholder="Recherche..." />
-                <input type="submit" value="Valider" />
+                <input type="search" name="recherche" placeholder="Rechercher" class="search-bar"/>
+                <input type="submit" value="Valider" class="search-button"/>
             </form>
             <div id="header-connection">
                 <a class="header-link" href="../../pages/annonceAdd/">

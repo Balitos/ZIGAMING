@@ -5,7 +5,6 @@
     </div>
     <a href="../../pages/support/">Support</a>
     <div id="footer-text">
-        <p>Ce site est protégé par reCAPTCHA et les règles de confidentialité de Google, les conditions d'utilisation et les conditions de 
-            service de YouTube s'appliquent.</p>
+        <p>Réalisé par l'équipe Nicolas - Clément</p>
     </div>
 </footer>

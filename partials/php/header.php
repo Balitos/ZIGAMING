@@ -14,8 +14,8 @@
                 <option value="xbox369">
                 <option value="XBOXONE">
             </datalist> -->
-                <input type="search" name="recherche" placeholder="Recherche..." />
-                <input type="submit" value="Valider" />
+            <input type="search" name="recherche" placeholder="Rechercher" class="search-bar"/>
+                <input type="submit" value="Valider" class="search-button"/>
             </form>
             <div id="header-connection">
                 <a class="header-link" href="../../pages/login/">
