@@ -25,7 +25,7 @@ try {
     die('Erreur : ' . $e->getMessage());
 }
 
-$reponse = $bdd->query("SELECT A.numeroAnnonce, M.avatar, M.pseudo, M.descriptionProfil, M.mail 
+$reponse = $bdd->query("SELECT A.numeroAnnonce, M.avatar, M.pseudo, M.descriptionProfil, M.mail, M.id 
 FROM annonce A 
 JOIN membres M on M.id = A.id
 WHERE A.numeroAnnonce = '$getAnnonce'");
@@ -96,7 +96,7 @@ WHERE A.numeroAnnonce = '$getAnnonce'");
                         </p>
                     </div>
                     <div id="pc-link">
-                        <a href="../profil/index.php?id=<?php ?>">Voir profil</a>
+                        <a href="../profil/index.php?id=<?php echo $variable['id'] ?>">Voir profil</a>
                     </div>
                 </div>
                 <?php
