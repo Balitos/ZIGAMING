@@ -105,11 +105,11 @@ if(isset($_SESSION['id']))
     <div id="raw-title">
       <h3>Vends ton article</h3>
     </div>
-    <form name="formulaire_annonce" method="POST" onsubmit="return verif_champ(prix)" enctype="multipart/form-data">
+    <form name="formulaire_annonce" method="POST" enctype="multipart/form-data">
       <div class="gutter-xs4 sm-4 xl-4 md-4 container">
         <div class="card rounded-3 white">
           <div class="card-content">
-          <div class="grix xs2">
+          <div class="grix xs1">
             <div>
               <label>Choisissez  une Photo </label>
             </div>

@@ -8,14 +8,15 @@
                 </a>
             </div>
             <form method="GET" action="../../pages/recherche">
-       <!--     <datalist id="filtre">
-                <option value="PS3">
-                <option value="PS4">
-                <option value="xbox369">
-                <option value="XBOXONE">
-            </datalist> -->
-            <input type="search" name="recherche" placeholder="Rechercher" class="search-bar"/>
-                <input type="submit" value="Valider" class="search-button"/>
+                <select name="filtre_console" class="search-filtre">
+                    <option value="0">TOUT</option>
+                    <option value="PS4">PS4</option>
+                    <option value="PS3">PS3</option>
+                    <option value="XBOXONE">XBOXONE</option>
+                    <option value="xbox360">XBOX360</option>
+                </select>
+                <input type="search" name="recherche" placeholder="Rechercher" class="search-bar" />
+                <input type="submit" value="Valider" class="search-button" />
             </form>
             <div id="header-connection">
                 <a class="header-link" href="../../pages/login/">

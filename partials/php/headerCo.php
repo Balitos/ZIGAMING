@@ -8,13 +8,13 @@
                 </a>
             </div>
             <form method="GET" action="../../pages/recherche">
-        <!--    <select id="filtre-console" name="filtre-console">
-                <option value="no">--Please choose an console--</option>
-                <option value="ps4">PS4</option>
-                <option value="ps3">PS3</option>
-                <option value="XBOXONE">XBOXONE</option>
-                <option value="xbox360">xbox360</option>
-            </select>-->
+                    <select name="filtre_console" class="search-filtre">
+                        <option value="0">TOUT</option>
+                        <option value="PS4">PS4</option>
+                        <option value="PS3">PS3</option>
+                        <option value="XBOXONE">XBOXONE</option>                        
+                        <option value="xbox360">XBOX360</option>
+                    </select>
                 <input type="search" name="recherche" placeholder="Rechercher" class="search-bar"/>
                 <input type="submit" value="Valider" class="search-button"/>
             </form>

@@ -71,6 +71,17 @@ header > .contener {
 
 /* Search nav bar */
 
+.search-filtre {
+    width: 7em;
+    height: 3em;
+    border-radius: 2rem;
+    border: none;
+    color: white;
+    background: #2e2e2e;
+    padding: 1em;
+    font-family: "Roboto",sans-serif;
+    text-align: center;
+}
 .search-bar{
     width: 40em;
     height: 3em;
