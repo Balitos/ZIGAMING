@@ -1,0 +1,69 @@
+<?php
+session_start();
+
+try {
+    $bdd = new PDO('mysql:host=127.0.0.1;dbname=zigaming;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+} catch (Exception $e) {
+    die('Erreur : ' . $e->getMessage());
+}
+
+if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
+    if (isset($_GET['id']) and !empty($_GET['id'])) {
+        $id_message = intval($_GET['id']);
+        $msg = $bdd->prepare('SELECT * FROM messages WHERE id = ? AND id_destinataire = ?');
+        $msg->execute(array($_GET['id'], $_SESSION['id']));
+        $msg_nbr = $msg->rowCount();
+        $m = $msg->fetch();
+        $p_exp = $bdd->prepare('SELECT pseudo FROM membres WHERE id = ?');
+        $p_exp->execute(array($m['id_expediteur']));
+        $p_exp = $p_exp->fetch();
+        $p_exp = $p_exp['pseudo'];
+?>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <?php
+    include "../../partials/php/head.php";
+    ?>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <?php
+    if (isset($_SESSION['id'])) {
+        include "../../partials/php/headerCo.php";
+    } else {
+        include "../../partials/php/header.php";
+    }
+    ?>
+    <a href="../receptionMessage/">Boîte de réception</a> <a href="../envoiMessage/index.php?r=<?= $p_exp ?>&o=<?= urlencode($m['objet']) ?>">Répondre</a> <a href="supprimer.php?id=<?= $m['id'] ?>">Supprimer</a><br /><br /><br />
+    <h3 align="center">Lecture du message #<?= $id_message ?></h3>
+    <div align="center">
+        <?php if ($msg_nbr == 0) {
+            echo "Erreur";
+        } else { ?>
+            <b><?= $p_exp ?></b> vous a envoyé: <br /><br />
+            <b>Objet:</b> <?= $m['objet'] ?>
+            <br /><br />
+            <?= nl2br($m['message']) ?><br />
+        <?php } ?>
+    </div>
+
+    <!-- FOOTER -->
+    <?php
+    include "../../partials/php/footer.php";
+    ?>
+
+    <!-- FONT AWESOME KIT -->
+    <script src="https://kit.fontawesome.com/e6c2645393.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+<?php
+    $lu = $bdd->prepare('UPDATE messages SET lu = 1 WHERE id = ?');
+    $lu->execute(array($m['id']));
+    }
+}
+?>
