@@ -15,6 +15,9 @@ if(isset($_POST['mailform']))
     
         $message='
         <html>
+        <head>
+            <meta charset="utf-8" />
+        </head>
             <body>
                 <div align="center">
                     <br />

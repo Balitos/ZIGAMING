@@ -90,6 +90,7 @@ if(isset($_POST['connect_submit']))
             </div>
             <button class="form-submit" type="submit" name="connect_submit">Connection</button>
             <p class="register-login">ou <a href="../register/" title="Login">Créer un compte</a></p>
+            <p class="mdp_oublie"><a href="../recuperation/">Mot de passe oublié</a></p>
         </form>
     </div>
     <!-- FONT AWESOME KIT -->
