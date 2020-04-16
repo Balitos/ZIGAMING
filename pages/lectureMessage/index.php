@@ -37,17 +37,42 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
         include "../../partials/php/header.php";
     }
     ?>
-    <a href="../receptionMessage/">Boîte de réception</a> <a href="../envoiMessage/index.php?r=<?= $p_exp ?>&o=<?= urlencode($m['objet']) ?>">Répondre</a> <a href="supprimer.php?id=<?= $m['id'] ?>">Supprimer</a><br /><br /><br />
-    <h3 align="center">Lecture du message #<?= $id_message ?></h3>
-    <div align="center">
-        <?php if ($msg_nbr == 0) {
-            echo "Erreur";
-        } else { ?>
-            <b><?= $p_exp ?></b> vous a envoyé: <br /><br />
-            <b>Objet:</b> <?= $m['objet'] ?>
-            <br /><br />
-            <?= nl2br($m['message']) ?><br />
-        <?php } ?>
+
+    <!-- WRAPPER -->
+    <div id="wrapper">
+        <div class="contener">
+            <div id="lecture-container">
+                <div id="lecture-navbar">
+                    <a href="../receptionMessage/">Boîte de réception</a>
+                    <a href="../envoiMessage/index.php?r=<?= $p_exp ?>&o=<?= urlencode($m['objet']) ?>">Répondre</a>
+                    <a href="supprimer.php?id=<?= $m['id'] ?>">Supprimer</a>
+                </div>
+                <div id="lecture-msg">
+                    <h3 id="lecture-title">Lecture du message #<?= $id_message ?></h3>
+                    <div id="lecture-content">
+                        <?php if ($msg_nbr == 0)
+                        {
+                            echo "Erreur";
+                        }
+                        else
+                        {
+                        ?>
+                        <div class="lecture-content-text" id="destinataire">
+                            <b><?= $p_exp ?></b> vous a envoyé:
+                        </div>
+                        <div class="lecture-content-text">
+                            <b>Objet:</b> <?= $m['objet'] ?>
+                        </div>
+                        <div class="lecture-content-text">
+                            <?= nl2br($m['message']) ?>
+                        </div>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- FOOTER -->
@@ -62,8 +87,8 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
 </html>
 
 <?php
-    $lu = $bdd->prepare('UPDATE messages SET lu = 1 WHERE id = ?');
-    $lu->execute(array($m['id']));
+        $lu = $bdd->prepare('UPDATE messages SET lu = 1 WHERE id = ?');
+        $lu->execute(array($m['id']));
     }
 }
 ?>

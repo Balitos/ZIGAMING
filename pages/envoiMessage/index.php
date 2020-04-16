@@ -66,24 +66,43 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
 
     <!-- WRAPPER -->
     <div id="wrapper">
-        <form method="POST">
-            <label>Destinataire:</label>
-            <input type="text" name="destinataire" <?php if (isset($r)) { echo 'value="' . $r . '"'; } ?> />
-            <br /><br />
-            <label>Objet:</label>
-            <input type="text" name="objet" <?php if (isset($o)) { echo 'value="' . $o . '"'; } ?> />
-            <br /><br />
-            <textarea placeholder="Votre message" name="message"></textarea>
-            <br /><br />
-            <input type="submit" value="Envoyer" name="envoi_message" />
-            <br /><br />
-            <?php if (isset($error)) {
-                echo '<span style="color:red">' . $error . '</span>';
-            } ?>
-        </form>
-        <br />
-        <a href="../receptionMessage/">Boîte de réception</a>
+        <div class="contener">
+            <div id="envoi-container">
+                <div id="formulaire">
+                    <form method="POST">
+                        <div class="register-form-inputs">
+                            <div class="register-input-box">
+                                <label>Destinataire:</label>
+                                <input type="text" name="destinataire" <?php if (isset($r)) { echo 'value="' . $r . '"'; } ?> />
+                            </div>
+
+                            <div class="register-input-box">
+                                <label>Objet:</label>
+                                <input type="text" name="objet" <?php if (isset($o)) { echo 'value="' . $o . '"'; } ?> />
+                            </div>
+
+                            <div class="register-input-box">
+                                <label>Message:</label>
+                                <textarea id="register-input-box-textarea" placeholder="Votre message" name="message"></textarea>
+                            </div>
+                        </div>
+                        <input type="submit" value="Envoyer" name="envoi_message" class="form-submit" />
+                        <div id="gestion-erreurs">
+                            <?php if (isset($error))
+                            {
+                                echo '<span style="color:red">' . $error . '</span>';
+                            }
+                            ?>
+                        </div>
+                    </form>
+                </div>
+                <div id="envoi-navbar">
+                    <a href="../receptionMessage/">Boîte de réception</a>
+                </div>
+            </div>
+        </div>
     </div>
+
 
     <!-- FOOTER -->
     <?php

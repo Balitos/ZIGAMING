@@ -1,3 +1,133 @@
 @import url("../../partials/css/base.css");
 @import url("../../partials/css/header.css");
 @import url("../../partials/css/footer.css");
+
+/* ENVOI MESSAGE */
+
+#envoi-container{
+    margin: 3em 0;
+}
+
+#envoi-navbar{
+    text-align: center;
+    margin-top: 2em;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+#envoi-navbar a{
+    color: white;
+}
+
+#register-input-box-textarea{
+    font-family: "Roboto",sans-serif;
+    font-size: 1.2rem;
+    padding-top: 12px;
+    width: 100%;
+    height: 5em;
+}
+
+
+    /* FORMULAIRE */
+
+    #formulaire{
+        background: #f2f2f2;
+        max-width: 450px;
+        border: 1px solid #ebebeb;
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 30px 48px;
+        position: relative;
+        text-align: center;
+    }
+
+    form h1{
+        color: #0a263c;
+        font-size: 24px;
+        margin: 0 0 20px;
+        padding: 0;
+        text-align: center;
+        font-weight: 300;
+    }
+
+    .register-input-box{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .register-input-box .fas{
+        position: absolute;
+        top: 16px;
+        left: 18px;
+        margin: 0;
+        line-height: 18px;
+        font-size: 18px;
+        color: #818286;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+    }
+
+    .register-input-box input, textarea{
+        border: 1px solid #e1e1e1;
+        box-sizing: border-box;
+        margin: 0 0 10px;
+        padding: 0 10px;
+        font-size: 16px;
+        color: #9d9d9d;
+        width: 50%;
+        height: 50px;
+        resize: none;
+    }
+
+    #gestion-erreurs{
+        color: red;
+        font-size: 15px;
+    }
+
+    .form-submit{
+        margin: 20px 0 0;
+        padding: 10px 0;
+        border: none;
+        border-radius: 0;
+        background: #fa9d1c;
+        box-sizing: border-box;
+        font-size: 20px;
+        color: #fff;
+        text-transform: uppercase;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .form-submit:hover{
+        background: #ffad39;
+    }
+
+    .register-login{
+        margin: 20px rgb(255, 149, 0);
+        text-align: center;
+        width: 100%;
+        font-size: 18px;
+        color: #808183;
+        line-height: 1;
+        font-weight: 400;
+    }
+
+    .register-login a{
+        margin: 0 0 0 4px;
+        position: relative;
+        top: -2px;
+        color: #5d5d5d;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 1;
+        vertical-align: middle;
+        text-decoration: none;
+        text-align: center;
+        font-size: 18px;
+    }

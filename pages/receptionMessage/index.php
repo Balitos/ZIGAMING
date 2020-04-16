@@ -37,24 +37,34 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
 
     <!-- WRAPPER -->
     <div id="wrapper">
-        <a href="../envoiMessage/">Nouveau message</a><br /><br /><br />
-        <h3>Votre boîte de réception:</h3>
-        <?php
-        if ($msg_nbr == 0) {
-            echo "Vous n'avez aucun message...";
-        }
-        while ($m = $msg->fetch()) {
-            $p_exp = $bdd->prepare('SELECT pseudo FROM membres WHERE id = ?');
-            $p_exp->execute(array($m['id_expediteur']));
-            $p_exp = $p_exp->fetch();
-            $p_exp = $p_exp['pseudo'];
-        ?>
-            <a href="../lectureMessage/index.php?id=<?= $m['id'] ?>" <?php if ($m['lu'] == 1) { ?><span style="color:grey"><?php } ?><b><?= $p_exp ?></b> vous a envoyé un message<br />
-            <b>Objet:</b> <?= $m['objet'] ?><?php if ($m['lu'] == 1) { ?></span><?php } ?></a><br />
-            -------------------------------------<br />
-        <?php
-        }
-        ?>
+        <div class="contener">
+            <div id="reception-container">
+                <div id="reception-new-msg">
+                    <a href="../envoiMessage/">Nouveau message</a>
+                </div>
+                <div id="reception-title">
+                    <h3>Votre boîte de réception:</h3>
+                </div>
+                <div id="reception-msg">
+                    <?php
+                    if ($msg_nbr == 0) {
+                        echo "Vous n'avez aucun message...";
+                    }
+                    while ($m = $msg->fetch()) {
+                        $p_exp = $bdd->prepare('SELECT pseudo FROM membres WHERE id = ?');
+                        $p_exp->execute(array($m['id_expediteur']));
+                        $p_exp = $p_exp->fetch();
+                        $p_exp = $p_exp['pseudo'];
+                    ?>
+                        <a href="../lectureMessage/index.php?id=<?= $m['id'] ?>" <?php if ($m['lu'] == 1) { ?><span style="color:grey"><?php } ?><b><?= $p_exp ?></b> vous a envoyé un message<br />
+                        <b>Objet:</b> <?= $m['objet'] ?><?php if ($m['lu'] == 1) { ?></span><?php } ?></a><br />
+                        -------------------------------------<br />
+                    <?php
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
     </div>
     
     <!-- FOOTER -->

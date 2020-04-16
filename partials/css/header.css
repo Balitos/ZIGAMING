@@ -39,6 +39,7 @@ header > .contener {
 }
 
 .header-co-contour{
+    width: 170px;
     background: #2e2e2e;
     padding: 10px 15px;
     margin: 0 10px;
@@ -69,8 +70,8 @@ header > .contener {
     color: inherit;
 }
 
-/* Search nav bar */
 
+/* Search nav bar */
 
 #search-wrapper{
     position: relative;
@@ -157,7 +158,21 @@ header > .contener {
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (max-width: 600px) {
     /* Search nav bar */
+    #search-wrapper{
+        margin: 0 1em;
+    }
 
+    .search-bar{
+        padding: 0;
+    }
+
+    .search-button{
+        display: none;
+    }
+
+    #dropdown-menu{
+        display: none;
+    }
 
     /* Header Logo */
     #header-logo{
@@ -168,18 +183,40 @@ header > .contener {
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width:601px) and (max-width: 768px) {
     /* Search nav bar */
+    #search-wrapper{
+        margin: 0 1em;
+    }
+
+    .search-button{
+        display: none;
+    }
+
+    .search-bar{
+        padding-right: 0;
+    }
 
 
     /* Header Logo */
     #header-logo{
-        margin-left: 1em;
+        display: none;
     }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width:769px) and (max-width: 992px) {
     /* Search nav bar */
+    #search-wrapper{
+        margin: 0 1em;
+    }
 
+    .search-bar{
+        padding-right: 20px;
+        text-align: left;
+    }
+
+    .search-button{
+        padding-left: 10px;
+    }
     
     /* Header Logo */
     #header-logo{
@@ -190,7 +227,9 @@ header > .contener {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width:993px) and (max-width: 1200px) {
     /* Search nav bar */
-
+    #search-wrapper{
+        margin: 0 1em;
+    }
 
     /* Header Logo */
     #header-logo{
