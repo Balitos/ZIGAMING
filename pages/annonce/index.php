@@ -10,7 +10,7 @@ try {
 include_once('../login/cookieconnect.php');
 
 $getAnnonce = intval($_GET['annonce']);
-$requser = $bdd->prepare('SELECT A.id, A.numeroAnnonce, A.titre, A.console, A.prix, A.photo, A.descriptionJeu
+$requser = $bdd->prepare('SELECT A.id, A.numeroAnnonce, A.titre, A.console, A.prix, A.photo, A.descriptionJeu, A.etat
 FROM annonce A
 WHERE numeroAnnonce = ?
 ');
@@ -74,6 +74,17 @@ WHERE A.numeroAnnonce = '$getAnnonce'");
                             <?php echo stripslashes($userinfo['descriptionJeu']) ?>
                         </p>
                     </div>
+                    <div id="gc-bottom">
+                        <p>
+                            <?php echo stripslashes($userinfo['console']) ?>
+                        </p>
+                        <p>
+                            <?php echo stripslashes($userinfo['etat']) ?>
+                        </p>
+                        <p>
+                            <?php echo stripslashes($userinfo['prix']) ?>€
+                        </p>
+                    </div>
                 </div>
                 <!-- PROFIL CARD -->
                 <?php
@@ -97,6 +108,7 @@ WHERE A.numeroAnnonce = '$getAnnonce'");
                     </div>
                     <div id="pc-link">
                         <a href="../profil/index.php?id=<?php echo $variable['id'] ?>">Voir profil</a>
+                        <a href="../envoiMessage/"><i class="far fa-comment-alt"></i></a>
                     </div>
                 </div>
                 <?php

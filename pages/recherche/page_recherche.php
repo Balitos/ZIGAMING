@@ -45,13 +45,15 @@
                             </a>
                         </div>
                         <div class="case-infos">
-                            <?php echo $variable['titre'] ?>
-                            <br>
-                            <br>
-                            <?php echo $variable['console'] ?>
+                            <div class="case-infos-titre">
+                                <?php echo $variable['titre'] ?>
+                            </div>
+                            <div class="case-infos-console">
+                                <?php echo $variable['console'] ?>
+                            </div>
                         </div>
                         <div class="case-price">
-                            <?php echo $variable['prix'] ?> €
+                            <?php echo $variable['prix'] ?>€
                         </div>
                     </div>
                 <?php

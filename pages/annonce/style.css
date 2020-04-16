@@ -35,7 +35,7 @@
 }
 
 #gc-description-title{
-    height: 10%;
+    height: 8%;
     color: white;
     display: flex;
     justify-content: center;
@@ -47,7 +47,7 @@
 }
 
 #gc-description{
-    height: 30%;
+    height: 25%;
     color: white;
     display: flex;
     justify-content: center;
@@ -56,6 +56,15 @@
 
 #gc-description p{
     margin: 0;
+}
+
+#gc-bottom{
+    height: 7%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    background-color: #ea732b;
 }
 
 
@@ -103,15 +112,24 @@
     background-color: #ea732b;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 #pc-link a{
     color: white;
 }
 
+#pc-link a i{
+    transition: transform .2s;
+}
+
+#pc-link a i:hover{
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
 #pc-link a:hover{
-    color: rgb(184, 184, 184);
+    color: initial;
 }
 
 

@@ -89,7 +89,7 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
                                     </div>
                                 </div>
                             <div class="case-price">
-                                <?php echo $variable['prix'] ?> €
+                                <?php echo $variable['prix'] ?>€
                             </div>
                         </a>
                     </div>
