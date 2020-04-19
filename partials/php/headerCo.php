@@ -24,17 +24,17 @@
             </div>
             <div id="header-connection">
                 <a class="header-link" href="../../pages/annonceAdd/">
-                    <button type="submit" class="header-co-contour" name="annonce-btn">
+                    <button type="submit" id="header-btn-co" name="annonce-btn">
                         <i class="fas fa-plus"></i>
                     </button>
                 </a>
                 <a class="header-link" href="../../pages/receptionMessage/">
-                    <button type="submit" class="header-co-contour" name="chat-btn">
+                    <button type="submit" id="header-btn-co" name="chat-btn">
                         <i class="fas fa-comments"></i>
                     </button>
                 </a>
                 <a class="header-link" href="../../pages/profil/index.php?id=<?php echo $_SESSION['id']?>">
-                    <button type="submit" class="header-co-contour" name="login-btn">
+                    <button type="submit" id="header-btn-co" name="login-btn">
                         <i class="far fa-user-circle"></i>
                     </button>
                 </a>
