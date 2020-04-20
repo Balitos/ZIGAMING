@@ -3,12 +3,7 @@ session_start();
 require_once '../../includes/functions.php';
 
 // REQUETE
-try {
-    $bdd = new PDO('mysql:host=db5000380300.hosting-data.io;dbname=dbs367003;charset=utf8', 'dbu525275', '^pc%MAjwsWVhc3pM', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-} catch (Exception $e) {
-    die('Erreur : ' . $e->getMessage());
-}
-
+include_once('../../partials/php/bdd.php');
 include_once('../login/cookieconnect.php');
 
 $getAnnonce = intval($_GET['annonce']);

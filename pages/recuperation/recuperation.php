@@ -1,11 +1,7 @@
 <?php
 session_start();
 
-try {
-    $bdd = new PDO('mysql:host=db5000380300.hosting-data.io;dbname=dbs367003;charset=utf8', 'dbu525275', '^pc%MAjwsWVhc3pM', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-} catch (Exception $e) {
-    die('Erreur : ' . $e->getMessage());
-}
+include_once('../../partials/php/bdd.php');
 
 if (isset($_GET['section'])) {
     $section = htmlspecialchars($_GET['section']);
@@ -41,7 +37,7 @@ if (isset($_POST['recup_submit'], $_POST['recup_mail'])) {
                 }
 
                 $header = "MIME-Version: 1.0\r\n";
-                $header .= 'From:"ZIgaming.com"<support@ZIgaming.com>' . "\n";
+                $header .= 'From:"ZIgaming.com"<llorens.31600@gmail.com>' . "\n";
                 $header .= 'Content-Type:text/html; charset="utf-8"' . "\n";
                 $header .= 'Content-Transfer-Encoding: 8bit';
 
@@ -60,7 +56,7 @@ if (isset($_POST['recup_submit'], $_POST['recup_mail'])) {
                             
                             <div align="center">Bonjour <b>' . $pseudo . '</b>,</div>
                             Voici votre code de récupération: <b>' . $recup_code . '</b>
-                            A bientôt sur <a href="http://zigaming.test/">ZIgaming.com</a> !
+                            A bientôt sur <a href="http://www.zigaming.fr/">ZIgaming.com</a> !
                             
                           </td>
                         </tr>
@@ -78,7 +74,7 @@ if (isset($_POST['recup_submit'], $_POST['recup_mail'])) {
                 </html>
                 ';
                 mail($recup_mail, "Récupération de mot de passe - ZIgaming.com", $message, $header);
-                header("Location:http://zigaming.test/pages/recuperation/index.php?section=code");
+                header("Location:http://www.zigaming.fr/pages/recuperation/index.php?section=code");
             } else {
                 $error = "Cette adresse mail n'est pas enregistrée";
             }
@@ -99,7 +95,7 @@ if (isset($_POST['verif_submit'], $_POST['verif_code'])) {
         if ($verif_req == 1) {
             $up_req = $bdd->prepare('UPDATE recuperation SET confirme = 1 WHERE mail = ?');
             $up_req->execute(array($_SESSION['recup_mail']));
-            header('Location:http://zigaming.test/pages/recuperation/index.php?section=changemdp');
+            header('Location:http://www.zigaming.fr/pages/recuperation/index.php?section=changemdp');
         } else {
             $error = "Code invalide";
         }
@@ -124,7 +120,7 @@ if (isset($_POST['change_submit'])) {
                     $ins_mdp->execute(array($hashedpass, $_SESSION['recup_mail']));
                     $del_req = $bdd->prepare('DELETE FROM recuperation WHERE mail = ?');
                     $del_req->execute(array($_SESSION['recup_mail']));
-                    header('Location:http://zigaming.test/pages/login/');
+                    header('Location:https://www.zigaming.fr/pages/login/');
                 } else {
                     $error = "Vos mots de passes ne correspondent pas";
                 }

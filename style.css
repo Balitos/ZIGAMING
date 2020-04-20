@@ -146,7 +146,7 @@
 
     /* SLIDESHOW */
     .slideshow-master-container{
-        height: calc(55vh - 5.5rem);
+        height: calc(50vh - 5.5rem);
         margin: 10vh 0 15vh 0;
     }
 }

@@ -8,6 +8,6 @@
         <a href="../../pages/infos/">Infos</a>
     </div>
     <div class="footer-text">
-        <p>Réalisé par l'équipe Nicolas - Clément</p>
+        <p>Réalisé par Nicolas & Clément - Ynov</p>
     </div>
 </footer>

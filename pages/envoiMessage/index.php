@@ -1,11 +1,6 @@
 <?php
 session_start();
-
-try {
-    $bdd = new PDO('mysql:host=db5000380300.hosting-data.io;dbname=dbs367003;charset=utf8', 'dbu525275', '^pc%MAjwsWVhc3pM', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-} catch (Exception $e) {
-    die('Erreur : ' . $e->getMessage());
-}
+include_once('../../partials/php/bdd.php');
 
 if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
     if (isset($_POST['envoi_message'])) {

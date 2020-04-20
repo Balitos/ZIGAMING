@@ -3,12 +3,7 @@ session_start();
 ob_start();
 
 // REQUETE PROFIL
-try {
-    $bdd = new PDO('mysql:host=db5000380300.hosting-data.io;dbname=dbs367003;charset=utf8', 'dbu525275', '^pc%MAjwsWVhc3pM', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-} catch (Exception $e) {
-    die('Erreur : ' . $e->getMessage());
-}
-
+include_once('../../partials/php/bdd.php');
 include_once('../login/cookieconnect.php');
 
 if (isset($_GET['id']) and $_GET['id'] > 0) {
@@ -19,11 +14,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
 
 // REQUETE ANNONCE
-try {
-    $bdd = new PDO('mysql:host=db5000380300.hosting-data.io;dbname=dbs367003;charset=utf8', 'dbu525275', '^pc%MAjwsWVhc3pM', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-} catch (Exception $e) {
-    die('Erreur : ' . $e->getMessage());
-}
+include_once('../../partials/php/bdd.php');
 
 $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, descriptionJeu FROM annonce WHERE id = '$getid'");
 ?>
@@ -150,11 +141,7 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
                         <?php
                         if (isset($_POST['supprimer_jeu' . $variable['numeroAnnonce']]))
                         {
-                          try {
-                              $bdd = new PDO('mysql:host=db5000380300.hosting-data.io;dbname=dbs367003;charset=utf8', 'dbu525275', '^pc%MAjwsWVhc3pM', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-                          } catch (Exception $e) {
-                              die('Erreur : ' . $e->getMessage());
-                          }
+                            include_once('../../partials/php/bdd.php');
 
                             $req = $bdd->prepare("DELETE FROM annonce WHERE numeroAnnonce= '$jeuToDell'");
                             $req->execute(['numeroAnnonce' => $jeuToDell]);
