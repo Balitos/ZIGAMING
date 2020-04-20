@@ -26,6 +26,7 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
     <?php
     include "../../partials/php/head.php";
     ?>
+    <title>Lecture messages - zigaming </title>
 </head>
 
 <body>

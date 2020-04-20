@@ -83,7 +83,7 @@ try {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>ZIGAMING</title>
+  <title>Ajoutez une annonce sur zigaming</title>
   <!-- Axentix CSS minified version -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@0.5.2/dist/css/axentix.min.css">
 

@@ -74,6 +74,7 @@ if (isset($_FILES['update_photo']) and !empty($_FILES['update_photo']['name'])) 
     <?php
     include "../../partials/php/head.php";
     ?>
+    <title>Modifié votre annonce zigaming</title>
 </head>
 
 <body>

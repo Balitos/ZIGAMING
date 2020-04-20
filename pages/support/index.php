@@ -50,6 +50,7 @@ if(isset($_POST['mailform']))
     <?php
     include "../../partials/php/head.php";
     ?>
+    <title>Zigaming Support</title>
 </head>
 
 <body>

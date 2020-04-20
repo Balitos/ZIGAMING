@@ -117,6 +117,7 @@ if (isset($_SESSION['id'])) {
     <?php
     include "../../partials/php/head.php";
     ?>
+    <title> Editez votre profil - zigaming</title>
 </head>
 
 <body>

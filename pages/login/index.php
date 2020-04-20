@@ -59,6 +59,7 @@ if(isset($_POST['connect_submit']))
     <?php
     include "../../partials/php/head.php";
     ?>
+    <title>zigaming - connexion</title>
 </head>
 
 <body>

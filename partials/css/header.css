@@ -38,11 +38,7 @@ header > .contener {
     display: flex;
 }
 
-#header-btn{
-    width: 170px;
-}
-
-#header-btn-co, #header-btn{
+.header-co-contour{
     background: #2e2e2e;
     padding: 10px 15px;
     margin: 0 10px;
@@ -57,13 +53,13 @@ header > .contener {
     color: white;
 }
 
-#header-btn-co:hover, #header-btn:hover{
+.header-co-contour:hover{
     color: rgb(165, 0, 0);
     transition: .25s;
     -webkit-transition: .25s;
 }
 
-#header-btn-co p, #header-btn p{
+.header-co-contour p{
     margin: 0 0 0 1rem;
     font-size: 1.1rem;
 }

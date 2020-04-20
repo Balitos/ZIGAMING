@@ -39,6 +39,7 @@ WHERE A.numeroAnnonce = '$getAnnonce'");
     <?php
     include "../../partials/php/head.php";
     ?>
+    <title><?php echo $userinfo['titre'] ?> sur <?php echo strtoupper($userinfo['console']) ?></title>
 </head>
 
 <body>
@@ -64,7 +65,7 @@ WHERE A.numeroAnnonce = '$getAnnonce'");
                 <!-- GAME CARD -->
                 <div id="game-card">
                     <div id="gc-img">
-                        <img src="/assets/membres/annonce/<?php echo $userinfo['photo'] ?>">
+                        <img src="/assets/membres/annonce/<?php echo $userinfo['photo'] ?>" alt="photo annonce <?php echo $variable['titre'] ?> sur zigaming">
                     </div>
                     <div id="gc-description-title">
                         <h3>Description</h3>

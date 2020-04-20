@@ -20,6 +20,7 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
     <?php
     include "partials/php/head.php";
     ?>
+    <title>ZIGAMING, site de vente de jeu d'occasion</title>
 </head>
 
 <body>
@@ -78,7 +79,7 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
                     <div class="case">
                         <a href="pages/annonce/index.php?annonce=<?php echo $variable['numeroAnnonce'] ?>">
                             <div class="case-img">
-                                <img src="/assets/membres/annonce/<?php echo $variable['photo'] ?>">
+                                <img src="/assets/membres/annonce/<?php echo $variable['photo'] ?>" alt="photo annonce <?php echo $variable['titre'] ?> sur zigaming">
                             </div>
                             <div class="case-infos">
                                     <div class="case-infos-titre">

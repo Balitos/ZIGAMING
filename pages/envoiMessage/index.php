@@ -49,6 +49,7 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
     <?php
     include "../../partials/php/head.php";
     ?>
+    <title> Envoyez de message - zigaming </title>
 </head>
 
 <body>

@@ -5,6 +5,7 @@
     <?php
     include "../../partials/php/head.php";
     ?>
+    <title>Recherche sur zigaming</title>
 </head>
 
 <body>
@@ -41,7 +42,7 @@
                     <div class="case">
                         <div class="case-img">
                             <a href="../annonce/index.php?annonce=<?php echo $variable['numeroAnnonce'] ?>" class="case-img">
-                                <img src="/assets/membres/annonce/<?php echo $variable['photo'] ?>" class="case-img">
+                                <img src="/assets/membres/annonce/<?php echo $variable['photo'] ?>" class="case-img" alt="annonce <?php echo $variable['titre'] ?> sur zigaming">
                             </a>
                         </div>
                         <div class="case-infos">

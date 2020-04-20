@@ -20,6 +20,7 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
     <?php
     include "../../partials/php/head.php";
     ?>
+    <title>recepetion message - zigaming</title>
 </head>
 
 <body>

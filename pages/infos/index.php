@@ -9,6 +9,7 @@ session_start();
     <?php
     include "../../partials/php/head.php";
     ?>
+    <title> A propos de zigaming</title>
 </head>
 
 <body>
@@ -28,7 +29,7 @@ session_start();
     <div id="wrapper">
         <div class="contener">
             <br>
-        <center><img src="/assets/images/zigaming.PNG" alt="logo ZIGAMING" ></center>
+        <center><img src="images/zigaming.PNG" alt="logo ZIGAMING" ></center>
             <h1 align="center" style="color:white">
                 Projet Web - B1 Ynov Info 2020 - ZIGAMING
             </h1>    
@@ -169,7 +170,7 @@ session_start();
                 </p>
 
             </p>
-            <center><img src="/assets/images/zigaming.PNG" alt="logo ZIGAMING" ></center>
+            <center><img src="images/zigaming.PNG" alt="logo ZIGAMING" ></center>
 
             <h3 style="color:white" align="center">
                     A propos de ZIGAMING : 
@@ -178,7 +179,7 @@ session_start();
                 ZIGAMING est une platforme de vente de jeu vidéo d'occasion crée pour le projet de fin d'année de B1 à Ynov par Clement et Nicolas.
                 Faite de bonne affaires sur zigaming et profiter de jeux d'occasion sur console et pc.
             </p>
-            <center><img src="/assets/images/zigaming.PNG" alt="logo ZIGAMING" ></center>
+            <center><img src="images/zigaming.PNG" alt="logo ZIGAMING" ></center>
         </div>
     </div>
 

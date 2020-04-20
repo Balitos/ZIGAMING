@@ -24,7 +24,7 @@
             </div>
             <div id="header-connection">
                 <a class="header-link" href="../../pages/login/">
-                    <button type="submit" id="header-btn" name="login-btn">
+                    <button type="submit" class="header-co-contour" name="login-btn">
                         <i class="far fa-user-circle"></i>
                         <p>Se connecter</p>
                     </button>

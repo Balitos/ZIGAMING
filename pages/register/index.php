@@ -94,6 +94,7 @@ if(isset($_POST['register_submit']))
     <?php
     include "../../partials/php/head.php";
     ?>
+    <title>Enregistrez-vous sur zigaming</title>
 </head>
 
 <body>

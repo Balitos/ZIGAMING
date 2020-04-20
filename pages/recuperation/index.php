@@ -7,6 +7,7 @@
     <?php
     include "../../partials/php/head.php";
     ?>
+    <title>Recuperation mot de passe zigaming</title>
 </head>
 
 <body>
