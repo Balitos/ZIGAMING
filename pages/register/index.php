@@ -56,7 +56,8 @@ if(isset($_POST['register_submit']))
                                 </body>
                             </html>
                             ';
-                        
+                            
+                            ini_set('llorens.31600@gmail.com','llorens.31600@gmail.com');
                             mail($mail, "Confirmation de compte", $message, $header);
                         }
                         else
