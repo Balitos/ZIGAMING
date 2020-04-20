@@ -4,7 +4,7 @@ ob_start();
 
 // REQUETE PROFIL
 try {
-    $bdd = new PDO('mysql:host=127.0.0.1;dbname=zigaming;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $bdd = new PDO('mysql:host=127.0.0.1;dbname=zigaming;charset=utf8', 'dbu525275', '^pc%MAjwsWVhc3pM', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
@@ -20,7 +20,7 @@ if (isset($_GET['id']) and $_GET['id'] > 0) {
 
 // REQUETE ANNONCE
 try {
-    $bdd = new PDO('mysql:host=127.0.0.1;dbname=zigaming;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $bdd = new PDO('mysql:host=127.0.0.1;dbname=zigaming;charset=utf8', 'dbu525275', '^pc%MAjwsWVhc3pM', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
