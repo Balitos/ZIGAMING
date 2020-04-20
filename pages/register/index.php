@@ -1,6 +1,6 @@
 <?php
 try {
-    $bdd = new PDO('mysql:host=127.0.0.1;dbname=zigaming;charset=utf8', 'dbu525275', '^pc%MAjwsWVhc3pM', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $bdd = new PDO('mysql:host=db5000380300.hosting-data.io;dbname=dbs367003;charset=utf8', 'dbu525275', '^pc%MAjwsWVhc3pM', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
@@ -51,7 +51,7 @@ if(isset($_POST['register_submit']))
                             <html>
                                 <body>
                                     <div align="center">
-                                        <a href="http://zigaming.test/pages/confirmation/index.php?pseudo='.urlencode($pseudo).'&key='.$key.'">Confirmez votre compte !</a>
+                                        <a href="https://www.zigaming.fr/pages/confirmation/index.php?pseudo='.urlencode($pseudo).'&key='.$key.'">Confirmez votre compte !</a>
                                     </div>
                                 </body>
                             </html>

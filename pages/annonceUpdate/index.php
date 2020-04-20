@@ -4,7 +4,7 @@ require_once '../../includes/functions.php';
 
 // REQUETE
 try {
-    $bdd = new PDO('mysql:host=127.0.0.1;dbname=zigaming;charset=utf8', 'dbu525275', '^pc%MAjwsWVhc3pM', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $bdd = new PDO('mysql:host=db5000380300.hosting-data.io;dbname=dbs367003;charset=utf8', 'dbu525275', '^pc%MAjwsWVhc3pM', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
