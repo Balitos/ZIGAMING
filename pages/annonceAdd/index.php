@@ -9,7 +9,7 @@ try {
 include_once('../login/cookieconnect.php');
 
   $id = $_SESSION['id'];
-  $reqannonce = $bdd->prepare("SELECT  numeroAnnonce FROM annonce WHERE id = '$id' ORDER BY numeroAnnonce DESC LIMIT 0,1");
+  $reqannonce = $bdd->prepare("SELECT  numeroAnnonce FROM annonce ORDER BY numeroAnnonce DESC");
   $reqannonce->execute(array());
   $annonceinfo = $reqannonce->fetch();
 
