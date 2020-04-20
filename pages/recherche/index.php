@@ -29,7 +29,7 @@ else if (isset($_GET['filtre_console']) and empty($_GET['filtre_console']) and i
 else if (isset($_GET['filtre_console']) and !empty($_GET['filtre_console']) and isset($_GET['recherche']) and empty($_GET['recherche'])){
     $filtre_console= htmlspecialchars($_GET['filtre_console']);
 
-    $recherche = htmlspecialchars("JEU PS4");
+    $recherche = htmlspecialchars("JEU $filtre_console");
     $articles = $bdd->query("SELECT * FROM annonce
     WHERE console ='$filtre_console'");
 
