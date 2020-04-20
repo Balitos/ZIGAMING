@@ -3,9 +3,7 @@
     <div class="contener">
         <div id="header-wrap">
             <div id="header-logo">
-                <a href="../../../">
-                    <h1>ZI<span>GAMING</span></h1>
-                </a>
+                <a href="../../../">ZI<span>GAMING</span></a>
             </div>
             <div id="search-wrapper">
                 <form method="GET" action="../../pages/recherche">

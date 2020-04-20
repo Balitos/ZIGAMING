@@ -43,7 +43,7 @@ if(isset($_POST['register_submit']))
                             header('Location: ../login/');
 
                             $header="MIME-Version: 1.0\r\n";
-                            $header.='From:"ZIgaming.com"<support@ZIgaming.com>'."\n";
+                            $header.='From:"zigaming.com"<llorens.31600@gmail.com>'."\n";
                             $header.='Content-Type:text/html; charset="utf-8"'."\n";
                             $header.='Content-Transfer-Encoding: 8bit';
                         
@@ -56,7 +56,6 @@ if(isset($_POST['register_submit']))
                                 </body>
                             </html>
                             ';
-                            
                             ini_set('llorens.31600@gmail.com','llorens.31600@gmail.com');
                             mail($mail, "Confirmation de compte", $message, $header);
                         }

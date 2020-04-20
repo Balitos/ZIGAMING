@@ -20,7 +20,7 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
     <?php
     include "partials/php/head.php";
     ?>
-    <title>ZIGAMING, site de vente de jeu d'occasion</title>
+    <title>ZIGAMING, vente de jeux et d'high-tech</title>
 </head>
 
 <body>
@@ -55,17 +55,17 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
                 <div class="slideshow-container">
                     <div class="mySlides fade">
                         <div class="numbertext">1 / 3</div>
-                        <img src="/assets/images/slideshow/csgo.jpg">
+                        <img src="/assets/images/slideshow/csgo.jpg" alt="image d'annonce 1 sur zigaming">
                     </div>
 
                     <div class="mySlides fade">
                         <div class="numbertext">2 / 3</div>
-                        <img src="/assets/images/slideshow/r6.jpg">
+                        <img src="/assets/images/slideshow/r6.jpg" alt="image d'annonce 2 sur zigaming">
                     </div>
 
                     <div class="mySlides fade">
                         <div class="numbertext">3 / 3</div>
-                        <img src="/assets/images/slideshow/tw3.jpg">
+                        <img src="/assets/images/slideshow/tw3.jpg" alt="image d'annonce 2 sur zigaming">
                     </div>
                 </div>
 

@@ -27,7 +27,7 @@ try {
 
   if (isset($_POST['annonce_submit'])) {
 
-    if (!empty($_POST['titre']) and !empty($_POST['descriptionJeu']) and !empty($_POST['console']) and !empty($_POST['etat']) and !empty($_POST['prix'])) {
+ if (!empty($_POST['titre']) and !empty($_POST['descriptionJeu']) and !empty($_POST['console']) and !empty($_POST['etat']) and !empty($_POST['prix'])) {
       $titreJeu = htmlspecialchars($_POST["titre"]);
       $descriptionJeu = htmlspecialchars(addslashes($_POST["descriptionJeu"]));
       $console = $_POST["console"];
@@ -58,20 +58,21 @@ try {
 
               header('Location: ../profil/index.php?id=' . $_SESSION['id']);
             } else {
-              $msg = "Erreur durant l'importation de votre photo";
+              $erreur = "Erreur durant l'importation de votre photo";
             }
           } else {
-            $msg = "Votre photo doit être au format jpg, jpeg, gif ou png";
+            $erreur = "Votre photo doit être au format jpg, jpeg, gif ou png";
           }
         } else {
-          $msg = "Votre photo ne doit pas dépasser 2Mo";
+          $erreur = "Votre photo ne doit pas dépasser 2Mo";
         }
+      } else {
+        $erreur = "Veuillez ajouter une image à l'annonce";
       }
     } else {
       $erreur = "Tous les champs doivent être complétés !";
     }
   }
-
 ?>
 
 
@@ -160,9 +161,9 @@ if(isset($_SESSION['id']))
               <div class="form-field">
                 <select class="form-control" name="console">
                   <option>PS4</option>
-                  <option>XBOXONE</option>
+                  <option>Xbox one</option>
                   <option>PS3</option>
-                  <option>xbox360</option>
+                  <option>Xbox 360</option>
                 </select>
               </div>
             </div>

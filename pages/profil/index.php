@@ -150,11 +150,11 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
                         <?php
                         if (isset($_POST['supprimer_jeu' . $variable['numeroAnnonce']]))
                         {
-                            try {
-                            $bdd = new PDO('mysql:host=localhost;dbname=zigaming;charset=utf8', 'root', '');
-                            } catch (Exception $e) {
-                            die('Erreur : ' . $e->getMessage());
-                            }
+                          try {
+                              $bdd = new PDO('mysql:host=db5000380300.hosting-data.io;dbname=dbs367003;charset=utf8', 'dbu525275', '^pc%MAjwsWVhc3pM', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+                          } catch (Exception $e) {
+                              die('Erreur : ' . $e->getMessage());
+                          }
 
                             $req = $bdd->prepare("DELETE FROM annonce WHERE numeroAnnonce= '$jeuToDell'");
                             $req->execute(['numeroAnnonce' => $jeuToDell]);

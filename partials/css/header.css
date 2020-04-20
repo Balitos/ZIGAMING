@@ -20,13 +20,11 @@ header > .contener {
     color: #fff;
 }
 
-#header-logo h1{
-    margin: 0;
-    color: white;
-}
-
 #header-logo a{
     text-decoration: none;
+    margin: 0;
+    color: white;
+  	font-size: 2em;
 }
 
 #header-logo span{

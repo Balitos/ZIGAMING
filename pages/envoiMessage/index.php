@@ -118,4 +118,8 @@ if (isset($_SESSION['id']) and !empty($_SESSION['id'])) {
 
 <?php
 }
+else
+{
+    header('Location: ../login/');
+}
 ?>
