@@ -15,7 +15,7 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
     <?php
     include "partials/php/head.php";
     ?>
-    <title>ZIGAMING, vente de jeux et d'high-tech</title>
+    <title>zigaming, vente de jeux et d'high-tech sur zigaming</title>
 </head>
 
 <body>
@@ -35,12 +35,12 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
         include "partials/php/header.php";
     }
     ?>
-
     <!-- WRAPPER -->
     <div id="wrapper">
         <div class="contener">
             <!-- SLIDESHOW -->
             <div class="slideshow-master-container">
+
                 <div id="dot-container">
                     <span class="dot"></span>
                     <span class="dot"></span>
