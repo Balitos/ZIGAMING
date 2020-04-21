@@ -1,0 +1,96 @@
+@import url("../../partials/css/base.css");
+@import url("../../partials/css/header.css");
+@import url("../../partials/css/footer.css");
+
+
+/* BODY */
+body{
+    background-color: white;
+}
+
+/* CONTACT */
+
+#form-title{
+    margin-top: 2em;
+    text-align: center;
+}
+
+#contact-wrap{
+    margin: 2em 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-box{
+    width: 40%;
+    box-sizing: border-box;
+    padding: 2.5em 2em;
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+}
+
+#form textarea{
+    resize: none;
+    font-family: "Roboto",sans-serif;
+}
+
+#submit{
+    margin: 0.8em 0 0 auto;
+    width: 35%;
+    padding: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: none;
+    background-color: #ea732b;
+    color: white;
+}
+
+#submit:hover{
+    background-color: #ffad39;
+}
+
+.form-item{
+    line-height: 28px;
+    margin: 0.8em 0 20px;
+    padding-left: 10px;
+}
+
+#msg-box{
+    margin-top: 1em;
+    text-align: center;
+    color: red;
+}
+
+
+/* MEDIA QUERIES */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+    .contact-box{
+        width: 80%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width:601px) and (max-width: 768px) {
+    .contact-box{
+        width: 70%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width:769px) and (max-width: 992px) {
+    .contact-box{
+        width: 55%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width:993px) and (max-width: 1200px) {
+
+}

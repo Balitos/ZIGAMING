@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+
+
+/* BODY */
+
+body{
+    margin: 0;
+    font-family: "Roboto",sans-serif;
+    font-size: 1.2rem;
+    background-color: #262626;
+}
+
+/* CONTAINER */
+
+.contener{
+    width: 1140px;
+    margin: 0 auto;
+}
+
+/* WRAPPER */
+
+#wrapper{
+  padding-top: 5.5rem;
+}
+
+
+/* MEDIA QUERIES */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+  .contener{
+    width: auto;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  .contener{
+    width: auto;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width:769px) and (max-width: 992px) {
+  .contener{
+    width: auto;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width:993px) and (max-width: 1200px) {
+  .contener{
+    width: auto;
+  }
+}
