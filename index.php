@@ -66,6 +66,9 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
 
             </div>
             <!-- CASES -->
+            <div id="case-container-title">
+                <h2>Dernières annonces :</h2>
+            </div>
             <div id="case-container">
                 <?php
                 $variable = "";
@@ -76,22 +79,27 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
                             <div class="case-img">
                                 <img src="/assets/membres/annonce/<?php echo $variable['photo'] ?>" alt="photo annonce <?php echo $variable['titre'] ?> sur zigaming">
                             </div>
-                            <div class="case-infos">
-                                    <div class="case-infos-titre">
-                                        <?php echo $variable['titre'] ?>
-                                    </div>
-                                    <div class="case-infos-console">
-                                        <?php echo $variable['console'] ?>
-                                    </div>
-                                </div>
-                            <div class="case-price">
-                                <?php echo $variable['prix'] ?>€
-                            </div>
                         </a>
+                        <div class="case-infos">
+                                <div class="case-infos-titre">
+                                    <a href="pages/annonce/index.php?annonce=<?php echo $variable['numeroAnnonce'] ?>">
+                                        <?php echo $variable['titre'] ?>
+                                    </a>  
+                                </div>
+                                <div class="case-infos-console">
+                                    <?php echo $variable['console'] ?>
+                                </div>
+                            </div>
+                        <div class="case-price">
+                            <?php echo $variable['prix'] ?>€
+                        </div>
                     </div>
                 <?php
                 }
                 ?>
+            </div>
+            <div id="voir-plus">
+                <a href="pages/recherche/?filtre_console=0&recherche=">Voir plus -></a>
             </div>
         </div>
     </div>

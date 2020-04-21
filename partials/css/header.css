@@ -51,6 +51,10 @@ header > .contener {
     color: white;
 }
 
+#no-co{
+    width: 170px;
+}
+
 .header-co-contour:hover{
     color: rgb(165, 0, 0);
     transition: .25s;

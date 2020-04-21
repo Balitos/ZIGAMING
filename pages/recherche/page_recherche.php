@@ -47,7 +47,9 @@
                         </div>
                         <div class="case-infos">
                             <div class="case-infos-titre">
-                                <?php echo $variable['titre'] ?>
+                                <a href="../annonce/index.php?annonce=<?php echo $variable['numeroAnnonce'] ?>">
+                                    <?php echo $variable['titre'] ?>
+                                </a> 
                             </div>
                             <div class="case-infos-console">
                                 <?php echo $variable['console'] ?>

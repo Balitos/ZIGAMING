@@ -195,7 +195,7 @@ if (isset($_POST['annonce_submit'])) {
                     <label for="prix">Prix *</label>
                   </div>
                   <div class="form-field">
-                    <input type="number" id="prix" name="prix" class="form-control" placeholder="0.00 €"></textarea>
+                    <input type="number" id="prix" name="prix" class="form-control" placeholder="0.00 €" min="0"></textarea>
                   </div>
                 </div>
               </div>

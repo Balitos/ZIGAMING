@@ -164,11 +164,11 @@ if (isset($_SESSION['id'])) {
 
                         <div class="form-field">
                             <label>Mot de passe</label>
-                            <input type="password" name="newmdp1"/>
+                            <input type="text" name="newmdp1"/>
                         </div>
                         <div class="form-field">
                             <label>Confirmation mot de passe</label>
-                            <input type="password" name="newmdp2"/>
+                            <input type="text" name="newmdp2"/>
                         </div>
                         <input type="submit" value="Mettre à jour" id="submit">
                     </div>

@@ -5,4 +5,10 @@
 
 #resultat{
     color : white;
+    padding-left: .5em;
+    margin: 2em 0;
+}
+
+#case-container{
+    margin-bottom: 4em;
 }

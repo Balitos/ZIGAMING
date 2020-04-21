@@ -1,4 +1,6 @@
 <?php
+require_once('../../partials/php/bdd.php');
+
 if(isset($_GET['pseudo'], $_GET['key']) AND !empty($_GET['pseudo']) AND !empty($_GET['key']))
 {
     $pseudo = htmlspecialchars(urldecode($_GET['pseudo']));
