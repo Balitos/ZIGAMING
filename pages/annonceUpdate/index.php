@@ -3,7 +3,7 @@ session_start();
 require_once '../../includes/functions.php';
 
 // REQUETE
-include_once('../../partials/php/bdd.php');
+require_once('../../partials/php/bdd.php');
 include_once('../login/cookieconnect.php');
 
 $getAnnonce = intval($_GET['annonce']);
@@ -42,7 +42,7 @@ if (isset($_FILES['update_photo']) and !empty($_FILES['update_photo']['name'])) 
     if ($_FILES['update_photo']['size'] <= $tailleMax) {
         $extensionUpload = strtolower(substr(strrchr($_FILES['update_photo']['name'], '.'), 1));
         if (in_array($extensionUpload, $extensionsValides)) {
-            $chemin = "/assets/membres/annonce/" . $getAnnonce . "." . $extensionUpload;
+            $chemin = "../../assets/membres/annonce/" . $getAnnonce . "." . $extensionUpload;
             $resultat = move_uploaded_file($_FILES['update_photo']['tmp_name'], $chemin);
             if ($resultat) {
                 $updatephoto = $bdd->prepare("UPDATE annonce SET photo = :update_photo WHERE numeroAnnonce ='$getAnnonce'");
@@ -105,9 +105,10 @@ if (isset($_FILES['update_photo']) and !empty($_FILES['update_photo']['name'])) 
                             <div class="case-infos-console">
                                 <select name="update_console" id="form-entry-console">
                                     <option>PS4</option>
-                                    <option>XBOXONE</option>
+                                    <option>Xbox One</option>
                                     <option>PS3</option>
-                                    <option>xbox360</option>
+                                    <option>Xbox 360</option>
+                                    <option>PC</option>
                                 </select>
                             </div>
                         </div>

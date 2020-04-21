@@ -12,7 +12,7 @@
 
 .profil-icons{
     text-align: right;
-    margin: 1em 0 2em 0;
+    margin: 1em 1em 2em 0;
 }
 
 .profil-icons i{
@@ -186,6 +186,10 @@
     #profil-img{
         margin: 1em 0;
     }
+
+    .profil-icons{
+        margin: 1em 2em 2em 0;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -204,6 +208,10 @@
 
     #profil-img{
         margin: 1em 0;
+    }
+
+    .profil-icons{
+        margin: 1em 2em 2em 0;
     }
 }
 

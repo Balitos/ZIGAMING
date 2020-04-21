@@ -40,30 +40,31 @@ $reponse = $bdd->query("SELECT id ,numeroAnnonce, console, titre, prix, photo, d
     <div id="wrapper">
         <div class="contener">
             <!-- SLIDESHOW -->
-            <div class="slideshow-master-container">
-                <div id="dot-container">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
+            <div id="slideshow-wrap">
+                <div class="slideshow-master-container">
+                    <div id="dot-container">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+
+                    <div class="slideshow-container">
+                        <div class="mySlides fade">
+                            <div class="numbertext">1 / 3</div>
+                            <img src="/assets/images/slideshow/csgo.jpg" alt="image d'annonce 1 sur zigaming">
+                        </div>
+
+                        <div class="mySlides fade">
+                            <div class="numbertext">2 / 3</div>
+                            <img src="/assets/images/slideshow/r6.jpg" alt="image d'annonce 2 sur zigaming">
+                        </div>
+
+                        <div class="mySlides fade">
+                            <div class="numbertext">3 / 3</div>
+                            <img src="/assets/images/slideshow/tw3.jpg" alt="image d'annonce 2 sur zigaming">
+                        </div>
+                    </div>
                 </div>
-
-                <div class="slideshow-container">
-                    <div class="mySlides fade">
-                        <div class="numbertext">1 / 3</div>
-                        <img src="/assets/images/slideshow/csgo.jpg" alt="image d'annonce 1 sur zigaming">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">2 / 3</div>
-                        <img src="/assets/images/slideshow/r6.jpg" alt="image d'annonce 2 sur zigaming">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <div class="numbertext">3 / 3</div>
-                        <img src="/assets/images/slideshow/tw3.jpg" alt="image d'annonce 2 sur zigaming">
-                    </div>
-                </div>
-
             </div>
             <!-- CASES -->
             <div id="case-container-title">

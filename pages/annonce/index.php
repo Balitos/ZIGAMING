@@ -94,7 +94,7 @@ WHERE A.numeroAnnonce = '$getAnnonce'");
                         else
                         {
                         ?>
-                        <img src="/assets/images/photo-avatar-profil.png" alt="Avatar par default">
+                        <img src="/assets/images/profil-default.png" alt="Avatar par default">
                         <?php
                         }
                         ?>

@@ -5,8 +5,12 @@
 
 /* SLIDESHOW */
 
+#slideshow-wrap{
+    display: flex;
+    justify-content: center;
+}
+
 .slideshow-master-container{
-    width: 100%;
     height: calc(95vh - 5.5rem);
     margin: 10vh 0 15vh 0;
 }
@@ -173,6 +177,7 @@
 
     /* SLIDESHOW */
     .slideshow-master-container{
+        width: 90%;
         height: calc(50vh - 5.5rem);
         margin: 10vh 0 15vh 0;
     }
@@ -189,6 +194,7 @@
 
     /* SLIDESHOW */
     .slideshow-master-container{
+        width: 90%;
         height: calc(65vh - 5.5rem);
         margin: 10vh 0 15vh 0;
     }
@@ -205,6 +211,7 @@
 
     /* SLIDESHOW */
     .slideshow-master-container{
+        width: 90%;
         height: calc(80vh - 5.5rem);
         margin: 10vh 0 15vh 0;
     }
